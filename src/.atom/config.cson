@@ -1,0 +1,53 @@
+"*":
+  "recent-files":
+    updated: false
+  "exception-reporting":
+    userId: "3693b2ab-2f02-8f93-38ce-d016022c40b1"
+  welcome:
+    showOnStartup: false
+  core:
+    disabledPackages: [
+      "release-notes"
+      "hash-n"
+      "base-n"
+    ]
+    followSymlinks: true
+  editor:
+    fontFamily: "Source Code Pro"
+    showInvisibles: true
+    showIndentGuide: true
+    preferredLineLength: 100
+    invisibles: {}
+    fontSize: 15
+  linter:
+    statusBar: "Show error of the selected line"
+    subtleLinterErrors: [
+      "jshint"
+      "jsxhint"
+    ]
+  "linter-jshint": {}
+  "autocomplete-plus": {}
+  "highlight-selected":
+    minimumLength: 2
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "color-highlight": true
+      "find-and-replace": true
+    autoToggle: true
+  "atom-color-highlight": {}
+  react: {}
+  "tree-view":
+    hideIgnoredNames: true
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  nuclide:
+    remoteProjectsConfig: []
+".js.jsx.source":
+  editor:
+    preferredLineLength: 100
+".coffee.jsx.source":
+  editor:
+    preferredLineLength: 100

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+bash <(curl https://raw.githubusercontent.com/rockymadden/binwrap/master/install)

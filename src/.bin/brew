@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Update and upgrade:
+# ---------------------------------------------------------------------------------------------------------------------
+
+brew update && brew upgrade && brew cleanup
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Install:
+# ---------------------------------------------------------------------------------------------------------------------
+
+brew install awscli
+brew install ansible
+brew install archey
+brew install asciinema
+brew install bash-completion
+brew install bcrypt
+brew install coreutils
+brew install curl --with-libidn --with-libssh2
+brew install docker
+brew install docker-compose
+brew install docker-machine
+brew install docker-swarm
+brew install elixir
+brew install exiftool
+brew install ffmpeg
+brew install findutils
+brew install flow
+brew install fswatch
+brew install gcc
+brew install git --with-brewed-curl --with-brewed-openssl
+brew install git-lfs
+brew install git-extras
+brew install gnupg --8192
+brew install gnupg2 --8192
+brew install go
+brew install gradle
+brew install heroku-toolbelt
+brew install httpie
+brew install hub
+brew install imagemagick --with-webp
+brew install kubernetes-cli
+brew install mitmproxy
+brew install moreutils
+brew install nmap
+brew install nvm
+brew install openssl
+brew install optipng
+brew install python
+brew install redis # For the CLI.
+brew install rename
+brew install scala --with-docs --with-src
+brew install spark
+brew install ssh-copy-id
+brew install thefuck
+brew install vim
+brew install watchman
+brew install wget --enable-iri
+brew install wireshark --with-qt

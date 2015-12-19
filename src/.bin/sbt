@@ -1,0 +1,4 @@
+#!/bin/bash
+
+curl -o /usr/local/bin/sbt https://raw.githubusercontent.com/paulp/sbt-extras/master/sbt
+chmod 0755 /usr/local/bin/sbt

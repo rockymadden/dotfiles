@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Set up:
+# ---------------------------------------------------------------------------------------------------------------------
+
+brew tap caskroom/fonts
+brew install brew-cask
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Update and upgrade:
+# ---------------------------------------------------------------------------------------------------------------------
+
+brew update && brew upgrade brew-cask && brew cleanup
+
+# ---------------------------------------------------------------------------------------------------------------------
+# Install:
+# ---------------------------------------------------------------------------------------------------------------------
+
+brew cask install font-alegreya
+brew cask install font-anonymous-pro
+brew cask install font-droid-sans
+brew cask install font-droid-serif
+brew cask install font-exo
+brew cask install font-exo2
+brew cask install font-fontawesome
+brew cask install font-istok-web
+brew cask install font-karla
+brew cask install font-lato
+brew cask install font-lora
+brew cask install font-merriweather
+brew cask install font-nobile
+brew cask install font-open-sans
+brew cask install font-pt-mono
+brew cask install font-pt-sans
+brew cask install font-pt-serif
+brew cask install font-raleway
+brew cask install font-raleway-dots
+brew cask install font-roboto
+brew cask install font-source-code-pro
+brew cask install font-source-sans-pro
+brew cask install font-ubuntu

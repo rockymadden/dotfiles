@@ -1,0 +1,22 @@
+# Core ignores.
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*#
+.git
+
+# OS ignores.
+.DS_Store
+
+# Build and language ignores.
+node_modules
+.cabal-sandbox
+
+# Editor ignores.
+.idea
