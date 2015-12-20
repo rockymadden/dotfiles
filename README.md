@@ -5,6 +5,9 @@
 [![license](http://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
 [![circleci](https://circleci.com/gh/rockymadden/dotfiles.svg?style=shield)](https://circleci.com/gh/rockymadden/dotfiles)
 
+Unless you are [rockymadden](http://github.com/rockymadden), don't use this tap/formula directly!
+Forks, however, are welcome.
+
 ## Installation
 ```bash
 $ brew tap rockymadden/private
