@@ -1,4 +1,4 @@
-# dotfiles <sub><sup>| dotfile management via a personal private homebrew tap</sup></sub>
+# dotfiles <sub><sup>| dotfile management via a personal homebrew tap</sup></sub>
 [![version](http://img.shields.io/badge/version-v0.0.0-blue.svg)](https://github.com/rockymadden/dotfiles/releases)
 [![versioning](http://img.shields.io/badge/versioning-semver-blue.svg)](http://semver.org/)
 [![branching](http://img.shields.io/badge/branching-github%20flow-blue.svg)](https://guides.github.com/introduction/flow/)
