@@ -1,0 +1,34 @@
+# Core ignores.
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*#
+.git
+
+# OS ignores.
+.DS_Store
+
+# Build ignores.
+target
+build
+
+# Node ignores.
+node_modules
+
+# Bower ignores.
+bower_components
+
+# Haskell ignores.
+.cabal-sandbox
+_cache
+_site
+*.hi
+*.o
+cabal.sandbox.config
+site

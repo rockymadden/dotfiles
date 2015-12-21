@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo gem install sass
+sudo gem install tugboat
