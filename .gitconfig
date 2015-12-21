@@ -13,7 +13,7 @@
 	default = simple
 [alias]
 	amend = commit -a --amend
-	branch-clean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+	branch-clean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -I{} git branch -d {}; }; f"
 	branch-start = !git branch-clean master && git cob
 	branch-done = "!f() { git checkout ${1-master} && git sync && git branch-clean ${1-master}; }; f"
 	bugfix-start = branch-start
