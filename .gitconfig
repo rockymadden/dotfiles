@@ -3,9 +3,6 @@
 	email = git@rockymadden.com
 [credential]
 	helper = osxkeychain
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
 [core]
 	filemode = true
 	ignorecase = false
@@ -16,17 +13,23 @@
 	default = simple
 [alias]
 	amend = commit -a --amend
-	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
-	bstart = cob
-	bstop = "!f() { git checkout ${1-master} && git sync && git bclean ${1-master}; }; f"
+	branch-clean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+	branch-start = !git branch-clean master && git cob
+	branch-done = "!f() { git checkout ${1-master} && git sync && git branch-clean ${1-master}; }; f"
+	bugfix-start = branch-start
+	bugfix-done = branch-done
 	cm = !git add -A && git commit -m
 	co = checkout
 	cob = checkout -b
 	detail = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	eject = !git rollback && git checkout master && git rebase --abort
-	retry = !git undo && git cm
+	feature-start = branch-start
+	feature-done = branch-done
+	normalize = !git remote-normalize
+	redo = !git undo && git cm
 	rollback = reset HEAD~1 --hard
+	remote-normalize = git remote rename origin gh
 	summary = !git log $(git log -1 --merges --pretty=format:%H)..HEAD --oneline
 	sync = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	undo = reset HEAD~1 --mixed
-	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git rollback
+	wipe = !git add -A && git commit -qm 'wipe' && git rollback
