@@ -24,9 +24,9 @@
 	cob = checkout -b
 	detail = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	eject = !git rollback && git checkout master && git rebase --abort
-	retry = !git undo && git cm
+	redo = !git undo && git cm
 	rollback = reset HEAD~1 --hard
 	summary = !git log $(git log -1 --merges --pretty=format:%H)..HEAD --oneline
 	sync = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	undo = reset HEAD~1 --mixed
-	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git rollback
+	wipe = !git add -A && git commit -qm 'wipe' && git rollback
