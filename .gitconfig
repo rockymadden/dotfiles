@@ -14,16 +14,16 @@
 [alias]
 	amend = commit -a --amend
 	branch-clean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -I{} git branch -d {}; }; f"
-	branch-start = !git branch-clean master && git cob
+	branch-new = !git branch-clean master && git cob
 	branch-done = "!f() { git checkout ${1-master} && git sync && git branch-clean ${1-master}; }; f"
-	bugfix-start = branch-start
+	bugfix-new = branch-new
 	bugfix-done = branch-done
 	cm = !git add -A && git commit -m
 	co = checkout
 	cob = checkout -b
 	detail = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	eject = !git rollback && git checkout master && git rebase --abort
-	feature-start = branch-start
+	feature-new = branch-new
 	feature-done = branch-done
 	normalize = !git remote-normalize
 	redo = !git undo && git cm
@@ -32,4 +32,4 @@
 	summary = !git log $(git log -1 --merges --pretty=format:%H)..HEAD --oneline
 	sync = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	undo = reset HEAD~1 --mixed
-	wipe = !git add -A && git commit -qm 'wipe' && git rollback
+	wipe = !git add -A && git commit -qm 'wiped' && git rollback
