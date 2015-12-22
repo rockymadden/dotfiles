@@ -12,6 +12,10 @@
       "base-n"
     ]
     followSymlinks: true
+    themes: [
+      "one-light-ui"
+      "one-light-syntax"
+    ]
   editor:
     fontFamily: "Source Code Pro"
     showInvisibles: true
@@ -45,9 +49,11 @@
     promptWhenFileHasChangedOnDisk: false
   nuclide:
     remoteProjectsConfig: []
-".js.jsx.source":
+  "one-light-ui":
+    layoutMode: "Compact"
+".coffee.jsx.source":
   editor:
     preferredLineLength: 100
-".coffee.jsx.source":
+".js.jsx.source":
   editor:
     preferredLineLength: 100
