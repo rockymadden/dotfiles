@@ -13,20 +13,20 @@
 	default = simple
 [alias]
 	amend = commit -a --amend
-	branch-add = !git branch-clean master && git cob
-	branch-clean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -I{} git branch -d {}; }; f"
-	branch-remove = "!f() { git checkout ${1-master} && git sync && git branch-clean ${1-master}; }; f"
-	bugfix-add = branch-add
-	bugfix-new = branch-add
-	bugfix-done = branch-remove
+	bugfix-add = ghflow-add
+	bugfix-new = ghflow-add
+	bugfix-done = ghflow-remove
 	cm = !git add -A && git commit -m
 	co = checkout
 	cob = checkout -b
 	detail = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	eject = !git rollback && git checkout master && git rebase --abort
-	feature-add = branch-add
-	feature-new = branch-add
-	feature-done = branch-remove
+	feature-add = ghflow-add
+	feature-new = ghflow-add
+	feature-done = ghflow-remove
+	ghflow-add = !git ghflow-clean master && git cob
+	ghflow-clean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -I{} git branch -d {}; }; f"
+	ghflow-remove = "!f() { git checkout ${1-master} && git sync && git ghflow-clean ${1-master}; }; f"
 	normalize = !git remote-normalize
 	redo = !git undo && git cm
 	rollback = reset HEAD~1 --hard
