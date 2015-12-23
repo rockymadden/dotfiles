@@ -1,25 +1,21 @@
-# Core.
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export EDITOR="nano"
+export HISTFILESIZE=32768
+export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"
 export HISTSIZE=32768
-export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoreboth
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
-export HISTIGNORE="la:ls:cd:cd -:pwd:exit:date:* --help"
 export GREP_OPTIONS="--color=auto"
 
-# Haskell.
+# Haskell
 export CABALPATH=$HOME/.cabal
 export PATH=$PATH:$CABALPATH/bin
 
-# Go.
+# Go
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
 
-# Javascript.
+# Javascript
 export NODE_ENV=development
 export NVM_DIR=~/.nvm
-
-# Docker.
-docker-machine ls 2> /dev/null | grep dev | grep -q Running && eval "$(docker-machine env dev)"
