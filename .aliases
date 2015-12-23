@@ -10,10 +10,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
-# Fix commands automatically:
-alias fuck='eval $(thefuck $(fc -ln -1)); history -r'
-alias fix='fuck'
-
 # Hashing.
 alias md5='openssl dgst -md5'
 alias sha1='openssl dgst -sha1'

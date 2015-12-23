@@ -53,7 +53,6 @@ brew install rename
 brew install scala --with-docs --with-src
 brew install spark
 brew install ssh-copy-id
-brew install thefuck
 brew install vim
 brew install watchman
 brew install wget --enable-iri
