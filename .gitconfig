@@ -28,7 +28,7 @@
 	normalize = !git remote-normalize
 	redo = !git undo && git cm
 	rollback = reset HEAD~1 --hard
-	remote-normalize = git remote rename origin gh
+	remote-normalize = remote rename origin gh
 	summary = !git log $(git log -1 --merges --pretty=format:%H)..HEAD --oneline
 	sync = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	undo = reset HEAD~1 --mixed
