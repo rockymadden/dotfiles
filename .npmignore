@@ -1,4 +1,4 @@
-# Core ignores.
+# Core
 *.diff
 *.err
 *.orig
@@ -11,12 +11,11 @@
 *#
 .git
 
-# OS ignores.
+# OS
 .DS_Store
 
-# Build and language ignores.
+# Node
 node_modules
-.cabal-sandbox
 
-# Editor ignores.
-.idea
+# Haskell
+.cabal-sandbox

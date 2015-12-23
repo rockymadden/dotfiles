@@ -1,4 +1,4 @@
-# Core ignores.
+# Core
 *.diff
 *.err
 *.orig
@@ -11,20 +11,20 @@
 *#
 .git
 
-# OS ignores.
+# OS
 .DS_Store
 
-# Build ignores.
+# Build
 target
 build
 
-# Node ignores.
+# Node
 node_modules
 
-# Bower ignores.
+# Bower
 bower_components
 
-# Haskell ignores.
+# Haskell
 .cabal-sandbox
 _cache
 _site

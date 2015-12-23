@@ -1,5 +1,5 @@
 " ---------------------------------------------------------------------------
-" Miscellaneous.
+" Miscellaneous
 " ---------------------------------------------------------------------------
 filetype plugin on
 filetype indent on
@@ -8,20 +8,20 @@ set history=2048
 set tabpagemax=32
 
 " ---------------------------------------------------------------------------
-" Theme and font.
+" Theme and font
 " ---------------------------------------------------------------------------
 " colorscheme Tomorrow-Night
 set gfn=Source\ Code\ Pro:h12
 
 " ---------------------------------------------------------------------------
-" Backups.
+" Backups
 " ---------------------------------------------------------------------------
 set nobackup
 set noswapfile
 set nowritebackup
 
 " ---------------------------------------------------------------------------
-" User interface.
+" User interface
 " ---------------------------------------------------------------------------
 set autoindent
 set backspace=2
@@ -49,7 +49,7 @@ let g:ConqueTerm_InsertOnEnter = 1
 let g:ConqueTerm_CloseOnEnd = 1
 
 " ---------------------------------------------------------------------------
-" Change to select mode when selecting text.
+" Change to select mode when selecting text
 " ---------------------------------------------------------------------------
 set selectmode=mouse,key
 set mousemodel=popup
@@ -57,12 +57,6 @@ set keymodel=startsel
 set selection=inclusive
 
 " ---------------------------------------------------------------------------
-"  Strip all trailing whitespace.
+"  Strip all trailing whitespace
 " ---------------------------------------------------------------------------
 "autocmd BufWritePre * :%s/\s\+$//e
-
-" ---------------------------------------------------------------------------
-" File types.
-" ---------------------------------------------------------------------------
-" au BufNewFile,BufRead *.gradle setf groovy
-" au BufNewFile,BufRead *.groovy setf groovy
