@@ -65,11 +65,11 @@ function mkd() {
 }
 
 function slack-pull-request() {
-  git issue | grep "${2}" | cut -d ']' -f2 | slack send --channel="${1}" --pretext='Pull request merged into master:' --color=good
+  git issue | grep "${1}" | cut -d ']' -f2 | slack send --channel="${2}" --pretext='Pull request merged into master:' --color=good
 }
 
 function slack-collaborator() {
-  slack send "<https://github.com/${2}|${2}>" --channel="${1}" --pretext='Collaborator added to project:' --color=warning
+  slack send "<https://github.com/${1}|${1}>" --channel="${2}" --pretext='Collaborator added to project:' --color=warning
 }
 
 function tarbz2() {
