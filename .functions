@@ -64,7 +64,7 @@ function mkd() {
   mkdir -p "$@" && cd "$_"
 }
 
-ffunction slack-pull-request() {
+function slack-pull-request() {
   git issue | grep "${1}" | cut -d ']' -f2 | slack send --channel="${2}" --pretext='Pull request merged into master:' --color=good
 }
 
