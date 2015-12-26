@@ -64,12 +64,29 @@ function mkd() {
   mkdir -p "$@" && cd "$_"
 }
 
-function slack-pull-request() {
-  git issue | grep "${1}" | cut -d ']' -f2 | slack send --channel="${2}" --pretext='Pull request merged into master:' --color=good
+function slack-collaborator() {
+  local url=$(git browse -u)
+  local repo=$(git browse -u | sed -e 's|https://github.com/||g')
+
+  slack send "*Collaborator state change:* ${1}" \
+    --author="${repo}" \
+    --author-icon='https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
+    --author-link="${url}" \
+    --channel="${2}" \
+    --color=good
 }
 
-function slack-collaborator() {
-  slack send "<https://github.com/${1}|${1}> with ${2} permissions" --channel="${3}" --pretext='Collaborator added to project:' --color=warning
+function slack-pull-request() {
+  local url=$(git browse -u)
+  local repo=$(git browse -u | sed -e 's|https://github.com/||g')
+  local desc=$(git issue | grep "${1}" | cut -d ']' -f2)
+
+  slack send "*Pull request merged into master:* ${desc}" \
+    --author="${repo}" \
+    --author-icon='https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
+    --author-link="${url}" \
+    --channel="${2}" \
+    --color=good
 }
 
 function tarbz2() {
