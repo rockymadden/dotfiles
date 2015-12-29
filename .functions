@@ -25,6 +25,38 @@ function codepoint() {
   fi
 }
 
+function curl() {
+  local BIN=$(which curl)
+
+  case "${1}" in
+    finlink)
+      ${BIN} "${2}" -s -L -I -o /dev/null -w "%{http_code}: %{url_effective}\\n"
+    ;;
+
+    follow)
+      local resp=$(${BIN} "${2}" -s -I -o /dev/null -w "%{http_code}|%{redirect_url}")
+      IFS='|' read -a tuple <<< "${resp}"
+
+      echo "${tuple[0]}: ${2}"
+
+      case "${tuple[0]}" in
+        301|302|303|307|308)
+          curl follow "${tuple[1]}"
+        ;;
+      esac
+    ;;
+
+    --binwrap)
+      echo 'Usage:'
+      echo '  curl {finlink|follow} <url>'
+    ;;
+
+    *)
+      ${BIN} "${@:1}"
+    ;;
+  esac
+}
+
 function dataurl() {
   local mimeType=$(file -b --mime-type "$1")
 
@@ -37,6 +69,90 @@ function dataurl() {
 
 function digga() {
   dig +nocmd "$1" any +multiline +noall +answer
+}
+
+function docker() {
+  local BIN=$(which docker)
+
+  case "$1" in
+    bash)
+      ${BIN} exec -it "${2}" bash
+    ;;
+
+    daemonize)
+      ${BIN} run -d -P "${@:2}"
+    ;;
+
+    flatten)
+      ${BIN} export $(${BIN} run -d "${2}" /bin/bash) | ${BIN} import - "${3}"
+    ;;
+
+    interact)
+      ${BIN} run -i -t -P "${@:2}"
+    ;;
+
+    ip)
+      ${BIN} inspect -f '{{.NetworkSettings.IPAddress}}' "${2}"
+    ;;
+
+    mac)
+      ${BIN} inspect -f '{{.NetworkSettings.MacAddress}}' "${2}"
+    ;;
+
+    ports)
+      ${BIN} inspect -f '{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' "${2}"
+    ;;
+
+    rmall)
+      ps=$(${BIN} ps -a -q)
+      [ -n "$ps" ] && docker stopall && ${BIN} rm "${@:2}" $ps
+    ;;
+
+    rmstopped)
+      ps=$(${BIN} ps -a -q -f 'status=exited')
+      [ -n "$ps" ] && ${BIN} rm "${@:2}" $ps
+    ;;
+
+    rmiall)
+      images=$(${BIN} images -q)
+      [ -n "$images" ] && docker stopall && docker rmall && ${BIN} rmi "${@:2}" $images
+    ;;
+
+    rmidangling)
+      images=$(${BIN} images -q -f 'dangling=true')
+      [ -n "$images" ] && ${BIN} rmi "${@:2}" $images
+    ;;
+
+    statsall)
+      ${BIN} stats "${@:2}" $(${BIN} ps -q)
+    ;;
+
+    stopall)
+      ps=$(${BIN} ps -a -q)
+      [ -n "$ps" ] && ${BIN} stop "${@:2}" $ps
+    ;;
+
+    volumes)
+      ${BIN} inspect -f '{{$conf := .Mounts}} {{(index $conf 0).Destination}} -> {{(index $conf 0).Source}}' "${2}"
+    ;;
+
+    --binwrap)
+      echo 'Usage:'
+      echo '  docker {rmall|rmstopped|rmiall|rmidangling|statsall|stopall}'
+      echo '  docker bash <container>'
+      echo '  docker daemonize <image> <command>'
+      echo '  docker flatten <image> <new image>'
+      echo '  docker interact <image> <command>'
+      echo '  docker ip <container>'
+      echo '  docker mac <container>'
+      echo '  docker ports <container>'
+      echo '  docker volumes <container>'
+    ;;
+
+    *)
+      ${BIN} "${@:1}"
+    ;;
+  esac
 }
 
 function escape() {
@@ -64,29 +180,70 @@ function mkd() {
   mkdir -p "$@" && cd "$_"
 }
 
-function slack-collaborator() {
-  local url=$(git browse -u)
-  local repo=$(git browse -u | sed -e 's|https://github.com/||g')
+function slack() {
+  case "${1}" in
+    collaborator)
+      local url=$(git browse -u)
+      local repo=$(git browse -u | sed -e 's|https://github.com/||g')
 
-  slack send "*Collaborator state change:* ${1}" \
-    --author="${repo}" \
-    --author-icon='https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
-    --author-link="${url}" \
-    --channel="${2}" \
-    --color=good
+      command slack send "*Collaborator state change:* ${2}" \
+        --author="${repo}" \
+        --author-icon='https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
+        --author-link="${url}" \
+        --channel="${3}" \
+        --color=good
+    ;;
+
+    pull-request)
+      local url=$(git browse -u)
+      local repo=$(git browse -u | sed -e 's|https://github.com/||g')
+      local desc=$(git issue | grep "${2}" | cut -d ']' -f2)
+
+      command slack send "*Pull request merged into master:* ${desc}" \
+        --author="${repo}" \
+        --author-icon='https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
+        --author-link="${url}" \
+        --channel="${3}" \
+        --color=good
+    ;;
+  esac
 }
 
-function slack-pull-request() {
-  local url=$(git browse -u)
-  local repo=$(git browse -u | sed -e 's|https://github.com/||g')
-  local desc=$(git issue | grep "${1}" | cut -d ']' -f2)
+function ssh() {
+  local BIN=$(which ssh)
 
-  slack send "*Pull request merged into master:* ${desc}" \
-    --author="${repo}" \
-    --author-icon='https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
-    --author-link="${url}" \
-    --channel="${2}" \
-    --color=good
+  case "${1}" in
+    forward)
+      test "$#" -lt 2 && return 1
+
+      a=(${2//:/ })
+
+      case "$#" in
+        3)
+          lp=${3}
+          rp=${a[1]}
+        ;;
+        2)
+          lp=${a[1]}
+          rp=${a[1]}
+        ;;
+      esac
+
+      case "${a[0]}" in
+        *@*) ${BIN} -N -L ${lp}:localhost:${rp} -l ${a[0]/@/ } & ;;
+        *) ${BIN} -N -L ${lp}:localhost:${rp} -l $(whoami) ${a[0]} & ;;
+      esac
+    ;;
+
+    --binwrap)
+      echo 'Usage:'
+      echo '  ssh forward [username]@<remote_host>:<remote_port> [local_port]'
+    ;;
+
+    *)
+      ${BIN} "${@:1}"
+    ;;
+  esac
 }
 
 function tarbz2() {
@@ -129,4 +286,43 @@ function unidecode() {
   if [ -t 1 ]; then
     echo ""
   fi
+}
+
+function vegeta() {
+  local BIN=$(which vegeta)
+
+  case "$1" in
+    GET)
+      echo "GET ${2}" | vegeta attack -duration="${3}" -rate="${4}" | tee /tmp/vegeta.bin | vegeta report
+    ;;
+
+    --binwrap)
+      echo 'Usage:'
+      echo '  vegeta GET <url>'
+    ;;
+
+    *)
+      ${BIN} "${@:1}"
+    ;;
+  esac
+}
+
+
+function wget() {
+  local BIN=$(which wget)
+
+  case "$1" in
+    mirror)
+      ${BIN} -mkpnp "${2}"
+    ;;
+
+    --binwrap)
+      echo 'Usage:'
+      echo '  wget mirror <baseurl>'
+    ;;
+
+    *)
+      ${BIN} "${@:1}"
+    ;;
+  esac
 }
