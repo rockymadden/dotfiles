@@ -54,6 +54,7 @@ brew install redis # For the CLI.
 brew install rename
 brew install ruby
 brew install scala --with-docs --with-src
+brew install socat
 brew install spark
 brew install ssh-copy-id
 brew install vim
