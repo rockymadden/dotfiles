@@ -1,5 +1,5 @@
 # Source dotfiles:
-for file in ~/.{exports,_exports,aliases,_aliases,wrappers,_wrappers,functions,_functions,sources,_sources}; do
+for file in ~/.{exports,_exports,aliases,_aliases,functions,_functions,sources,_sources}; do
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done
 unset file
