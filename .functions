@@ -206,6 +206,8 @@ function slack() {
         --channel="${3}" \
         --color=good
     ;;
+
+    *) command slack "${@:1}" ;;
   esac
 }
 
