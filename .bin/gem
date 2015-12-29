@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
+gem install jekyll
 gem install sass
 gem install tugboat
