@@ -112,6 +112,5 @@ brew cask install font-ubuntu
 
 # brew rockymadden
 brew install github-crypt
-brew install jsonparse
 brew install rfc
 brew install slack-cli
