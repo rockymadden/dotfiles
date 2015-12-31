@@ -213,27 +213,29 @@ function slack() {
 
 function socat() {
   case "${1}" in
-    http-echo)
+    http-echo|echo-http)
+      local port=8080
+
       while (( "$#" )); do
         case "${2}" in
-          --handle) handle='0' ; shift ;;
-          -h) handle='0' ; shift ;;
+          --port=*) port=${2/--port=/''} ; shift ;;
+          -p*) port=${3} ; shift ;;
           *) shift ;;
         esac
       done
 
-      if [ -n "${handle}"]; then
-        command socat -v -T0.05 tcp-l:8080,reuseaddr,fork,crlf system:"source ~/.functions && socat http-echo --handle"
-      else
-        echo 'HTTP/1.1 200 OK'
-        echo 'Content-Type: text/plain'
-        echo "Date: $(date)"
-        echo "Server: ${SOCAT_SOCKADDR}:${SOCAT_SOCKPORT}"
-        echo "Client: ${SOCAT_PEERADDR}:${SOCAT_PEER_PORT}"
-        echo 'Connection: close'
-        echo
-        cat
-      fi
+      command socat -v -T0.05 tcp-listen:${port},reuseaddr,fork,crlf system:"source ~/.functions && socat _http-echo"
+    ;;
+
+    _http-echo|_echo-http)
+      echo 'HTTP/1.1 200 OK'
+      echo 'Content-Type: text/plain'
+      echo "Date: $(date)"
+      echo "Server: ${SOCAT_SOCKADDR}:${SOCAT_SOCKPORT}"
+      echo "Client: ${SOCAT_PEERADDR}:${SOCAT_PEER_PORT}"
+      echo 'Connection: close'
+      echo
+      cat
     ;;
 
     *) command socat "${@:1}" ;;
