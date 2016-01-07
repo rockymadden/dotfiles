@@ -10,11 +10,12 @@
       "release-notes"
       "hash-n"
       "base-n"
+      "vim-mode"
     ]
     followSymlinks: true
     themes: [
-      "one-light-ui"
-      "one-light-syntax"
+      "atom-material-ui"
+      "atom-material-syntax"
     ]
   editor:
     fontFamily: "Source Code Pro"
@@ -22,7 +23,6 @@
     showIndentGuide: true
     preferredLineLength: 100
     invisibles: {}
-    fontSize: 15
   linter:
     statusBar: "Show error of the selected line"
     subtleLinterErrors: [
@@ -51,6 +51,8 @@
     remoteProjectsConfig: []
   "one-light-ui":
     layoutMode: "Compact"
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
 ".coffee.jsx.source":
   editor:
     preferredLineLength: 100
