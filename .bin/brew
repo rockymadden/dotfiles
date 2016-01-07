@@ -18,6 +18,7 @@ brew install ansible
 brew install archey
 brew install asciinema
 brew install bash-completion
+brew install bats
 brew install bcrypt
 brew install coreutils
 brew install curl --with-libidn --with-libssh2
@@ -51,6 +52,7 @@ brew install nmap
 brew install nvm
 brew install openssl
 brew install optipng
+brew install parallel
 brew install python
 brew install rbenv
 brew install redis # For the CLI.
@@ -71,13 +73,12 @@ brew cask install atom
 brew cask install cloud
 brew cask install fantastical
 brew cask install firefox
-brew cask install gitup
 brew cask install google-chrome
 brew cask install google-earth
 brew cask install istat-menus
 brew cask install iterm2
 brew cask install kitematic
-brew cask install skype
+brew cask install screenhero
 brew cask install slack
 brew cask install the-unarchiver
 brew cask install transmission
