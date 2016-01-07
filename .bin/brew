@@ -52,6 +52,7 @@ brew install nmap
 brew install nvm
 brew install openssl
 brew install optipng
+brew install parallel
 brew install python
 brew install rbenv
 brew install redis # For the CLI.
