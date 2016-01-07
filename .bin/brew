@@ -71,7 +71,6 @@ brew cask install atom
 brew cask install cloud
 brew cask install fantastical
 brew cask install firefox
-brew cask install gitup
 brew cask install google-chrome
 brew cask install google-earth
 brew cask install istat-menus
