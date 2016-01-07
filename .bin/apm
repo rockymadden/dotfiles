@@ -4,6 +4,8 @@
 mkdir -p ~/.atom/packages
 
 # install
+apm install atom-material-syntax
+apm install atom-material-ui
 apm install auto-detect-indentation
 apm install autocomplete-paths
 #apm install base-n
@@ -54,4 +56,5 @@ apm install regex-railroad-diagram
 apm install script
 apm install todo-show
 apm install trailing-spaces
+apm install vim-mode
 apm install zen
