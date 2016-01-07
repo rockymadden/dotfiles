@@ -18,6 +18,7 @@ brew install ansible
 brew install archey
 brew install asciinema
 brew install bash-completion
+brew install bats
 brew install bcrypt
 brew install coreutils
 brew install curl --with-libidn --with-libssh2
