@@ -1,117 +1,93 @@
 #!/usr/bin/env bash
 
-# taps
-brew tap caskroom/cask
-brew tap caskroom/versions
-brew tap homebrew/dupes
-brew tap homebrew/science
-brew tap rockymadden/rockymadden
+# TODO: When one of these, brew install with options
+curl='curl --with-libidn --with-libssh2'
+git='git --with-brewed-curl --with-brewed-openssl'
+gnupg='gnupg --8192'
+gnupg2='gnupg2 --8192'
+imagemagick='imagemagick --with-webp'
+scala='scala --with-docs --with-src'
+wget='wget --enable-iri'
+wireshark='wireshark --with-qt'
 
-# update, upgrade, and cleanup
-brew update
-brew upgrade
-brew cleanup
+read -d '' brews <<"EOF"
+ansible
+archey
+awscli
+asciinema
+bash-completion
+bats
+bcrypt
+coreutils
+curl
+docker
+docker-compose
+docker-machine
+docker-swarm
+elixir
+exiftool
+ffmpeg
+findutils
+flow
+fswatch
+gcc
+git
+git-lfs
+git-extras
+github-crypt
+gnu-sed
+gnu-tar
+gnupg
+gnupg2
+go
+gradle
+heroku-toolbelt
+httpie
+hub
+imagemagick
+jq
+kubernetes-cli
+mitmproxy
+moreutils
+nmap
+nvm
+openssl
+optipng
+python
+rbenv
+redis
+rfc
+ruby
+scala
+slack-cli
+socat
+spark
+ssh-copy-id
+vim
+watchman
+wget
+wireshark
+EOF
 
-# brew core
-brew install awscli
-brew install ansible
-brew install archey
-brew install asciinema
-brew install bash-completion
-brew install bats
-brew install bcrypt
-brew install coreutils
-brew install curl --with-libidn --with-libssh2
-brew install docker
-brew install docker-compose
-brew install docker-machine
-brew install docker-swarm
-brew install elixir
-brew install exiftool
-brew install ffmpeg
-brew install findutils
-brew install flow
-brew install fswatch
-brew install gcc
-brew install git --with-brewed-curl --with-brewed-openssl
-brew install git-lfs
-brew install git-extras
-brew install gnupg --8192
-brew install gnupg2 --8192
-brew install go
-brew install gradle
-brew install heroku-toolbelt
-brew install httpie
-brew install hub
-brew install imagemagick --with-webp
-brew install jq
-brew install kubernetes-cli
-brew install mitmproxy
-brew install moreutils
-brew install nmap
-brew install nvm
-brew install openssl
-brew install optipng
-brew install parallel
-brew install python
-brew install rbenv
-brew install redis # For the CLI.
-brew install rename
-brew install ruby
-brew install scala --with-docs --with-src
-brew install socat
-brew install spark
-brew install ssh-copy-id
-brew install vim
-brew install watchman
-brew install wget --enable-iri
-brew install wireshark --with-qt
+case "${1}" in
+  init)
+    brew tap homebrew/dupes
+    brew tap homebrew/science
+    brew tap rockymadden/rockymadden
+  ;;
 
-# brew cask
-brew cask install 1password
-brew cask install atom
-brew cask install cloud
-brew cask install fantastical
-brew cask install firefox
-brew cask install google-chrome
-brew cask install google-earth
-brew cask install istat-menus
-brew cask install iterm2
-brew cask install kitematic
-brew cask install screenhero
-brew cask install slack
-brew cask install the-unarchiver
-brew cask install transmission
-brew cask install vagrant
-brew cask install virtualbox
-brew cask install vlc
+  install)
+    brew update
+    comm -13 <(brew list -1 | sed 's|rockymadden/rockymadden/||' | sort) <(echo "${brews}" | sort) | xargs brew install
+  ;;
 
-# brew fonts
-brew cask install font-alegreya
-brew cask install font-anonymous-pro
-brew cask install font-droid-sans
-brew cask install font-droid-serif
-brew cask install font-exo
-brew cask install font-exo2
-brew cask install font-fontawesome
-brew cask install font-istok-web
-brew cask install font-karla
-brew cask install font-lato
-brew cask install font-lora
-brew cask install font-merriweather
-brew cask install font-nobile
-brew cask install font-open-sans
-brew cask install font-pt-mono
-brew cask install font-pt-sans
-brew cask install font-pt-serif
-brew cask install font-raleway
-brew cask install font-raleway-dots
-brew cask install font-roboto
-brew cask install font-source-code-pro
-brew cask install font-source-sans-pro
-brew cask install font-ubuntu
+  sync)
+    ${0} uninstall
+    ${0} install
+  ;;
 
-# brew rockymadden
-brew install github-crypt
-brew install rfc
-brew install slack-cli
+  uninstall)
+    brew update
+    comm -13 <(echo "${brews}" | sort) <(brew leaves | sed 's|rockymadden/rockymadden/||' | sort) | xargs brew uninstall
+  ;;
+esac
