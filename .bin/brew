@@ -90,4 +90,8 @@ case "${1}" in
     brew update
     comm -13 <(echo "${brews}" | sort) <(brew leaves | sed 's|rockymadden/rockymadden/||' | sort) | xargs brew uninstall
   ;;
+
+  *) echo 'Command not found' ; exit 1 ;;
 esac
+
+exit 0
