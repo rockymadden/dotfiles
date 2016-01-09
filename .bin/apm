@@ -52,12 +52,13 @@ trailing-spaces
 EOF
 
 case "${1}" in
-  install-delta|install)
-    mkdir -p ~/.atom/packages
+  init) mkdir -p ~/.atom/packages ;;
+
+  install)
     comm -13 <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@') <(echo "${packages}") | xargs apm install
   ;;
 
-  uninstall-delta|uninstall)
+  uninstall)
     comm -13 <(echo "${packages}") <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@') | xargs apm uninstall
   ;;
 
