@@ -1,61 +1,73 @@
 #!/usr/bin/env bash
 
-# setup
-mkdir -p ~/.atom/packages
+read -d '' packages <<"EOF"
+Zen
+atom-material-syntax
+atom-material-ui
+auto-detect-indentation
+autocomplete-paths
+circle-ci
+color-picker
+file-icons
+highlight-line
+highlight-selected
+language-agda
+language-apache
+language-docker
+language-elixir
+language-erlang
+language-haml
+language-haskell
+language-jade
+language-julia
+language-latex
+language-lisp
+language-lua
+language-nginx
+language-purescript
+language-rust
+language-scala
+language-swift
+linter
+linter-clojure
+linter-csslint
+linter-jshint
+linter-jsxhint
+markdown-pdf
+merge-conflicts
+minimap
+minimap-find-and-replace
+minimap-highlight-selected
+neutron-syntax
+neutron-ui
+nuance-dark-syntax
+nuance-dark-ui
+pigments
+pretty-json
+react
+regex-railroad-diagram
+script
+todo-show
+trailing-spaces
+EOF
 
-# install
-apm install atom-material-syntax
-apm install atom-material-ui
-apm install auto-detect-indentation
-apm install autocomplete-paths
-#apm install base-n
-apm install circle-ci
-apm install color-picker
-apm install file-icons
-apm install git-history
-apm install git-plus
-apm install git-log
-#apm install hash-n
-apm install highlight-line
-apm install highlight-selected
-apm install language-agda
-apm install language-apache
-apm install language-docker
-apm install language-elixir
-apm install language-erlang
-apm install language-haml
-apm install language-haskell
-apm install language-jade
-apm install language-julia
-apm install language-latex
-apm install language-lisp
-apm install language-lua
-apm install language-nginx
-apm install language-purescript
-apm install language-rust
-apm install language-scala
-apm install language-swift
-apm install linter
-apm install linter-clojure
-apm install linter-csslint
-apm install linter-jshint
-apm install linter-jsxhint
-#apm install nuclide-installer
-apm install markdown-pdf
-apm install merge-conflicts
-apm install minimap
-apm install minimap-find-and-replace
-apm install minimap-highlight-selected
-apm install neutron-syntax
-apm install neutron-ui
-apm install nuance-dark-syntax
-apm install nuance-dark-ui
-apm install pigments
-apm install pretty-json
-apm install react
-apm install regex-railroad-diagram
-apm install script
-apm install todo-show
-apm install trailing-spaces
-apm install vim-mode
-apm install zen
+case "${1}" in
+  init) mkdir -p ~/.atom/packages ;;
+
+  install)
+    comm -13 <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort) <(echo "${packages}" | sort) | xargs apm install
+  ;;
+
+  sync)
+    ${0} uninstall
+    ${0} install
+  ;;
+
+  uninstall)
+    comm -13 <(echo "${packages}" | sort) <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort) | xargs apm uninstall
+  ;;
+
+  *) echo 'Command not found' ; exit 1 ;;
+esac
+
+exit 0
