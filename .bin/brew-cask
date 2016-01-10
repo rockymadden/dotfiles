@@ -15,18 +15,15 @@ brew cask install atom
 brew cask install cloud
 brew cask install fantastical
 brew cask install firefox
-brew cask install gitup
 brew cask install google-chrome
 brew cask install google-earth
 brew cask install istat-menus
 brew cask install iterm2
 brew cask install kitematic
-brew cask install skype
+brew cask install screenhero
 brew cask install slack
 brew cask install the-unarchiver
 brew cask install transmission
-brew cask install vagrant
-brew cask install virtualbox
 brew cask install vlc
 
 # brew fonts
