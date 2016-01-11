@@ -155,6 +155,146 @@ function docker() {
   esac
 }
 
+# dotfile package manager manager
+function dfpmm() {
+  case "${1}" in
+    init)
+      case "${2}" in
+        apms|apm-packages|atom-packages) mkdir -p ~/.atom/packages ;;
+
+        brews|brew-forumulas|brew-packages)
+          brew tap homebrew/dupes
+          brew tap homebrew/science
+          brew tap rockymadden/rockymadden
+        ;;
+
+        casks|brew-cask-formulas|brew-cask-packages)
+          brew tap caskroom/cask
+          brew tap caskroom/versions
+        ;;
+
+        gems|ruby-packages) return 0 ;;
+
+        npms|node-packages) return 0 ;;
+
+        pips|python-packages) return 0 ;;
+      esac
+    ;;
+
+    install)
+      case "${2}" in
+        apms|apm-packages|atom-packages)
+          local p=$(<~/.dfpmm-apm)
+          local d=$(comm -13 <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort) <(echo "${p}" | sort))
+
+          test -n "${d}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) echo "${d}" | xargs apm install ;;
+            *) return 1 ;;
+          esac
+        ;;
+
+        brews|brew-forumulas|brew-packages)
+          local p=$(<~/.dfpmm-brew)
+          local d=$(comm -13 <(brew list -1 | sed 's|rockymadden/rockymadden/||' | sort) <(echo "${p}" | sort))
+
+          test -n "${d}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) brew update && echo "${d}" | xargs brew install ;;
+            *) return 1 ;;
+          esac
+        ;;
+
+        casks|brew-cask-formulas|brew-cask-packages)
+          local p=$(<~/.dfpmm-brew-cask)
+          local d=$(comm -13 <(brew cask list -1 | sort) <(echo "${p}" | sort))
+
+          test -n "${d}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) brew cask update && echo "${d}" | xargs brew cask install ;;
+            *) return 1 ;;
+          esac
+        ;;
+
+        gems|ruby-packages)
+          local p=$(<~/.dfpmm-gem)
+
+          test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) echo "${p}" | xargs gem install ;;
+            *) return 1 ;;
+          esac
+        ;;
+
+        npms|node-packages)
+          local p=$(<~/.dfpmm-npm)
+
+          test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) echo "${p}" | xargs npm install -g ;;
+            *) return 1 ;;
+          esac
+        ;;
+
+        pips|python-packages)
+          local p=$(<~/.dfpmm-pip)
+
+          test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) echo "${p}" | xargs pip install ;;
+            *) return 1 ;;
+          esac
+        ;;
+      esac
+    ;;
+
+    uninstall)
+      case "${2}" in
+        apms|apm-packages|atom-packages)
+          local p=$(<~/.dfpmm-apm)
+          local d=$(comm -13 <(echo "${p}" | sort) <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort))
+
+          test -n "${d}" && read -p "Proceed with uninstalling (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) echo "${d}" | xargs apm uninstall ;;
+            *) return 1 ;;
+          esac
+        ;;
+
+        brews|brew-forumulas|brew-packages)
+          local p=$(<~/.dfpmm-brew)
+          local d=$(comm -13 <(echo "${p}" | sort) <(brew leaves | sed 's|rockymadden/rockymadden/||' | sort))
+
+          test -n "${d}" && read -p "Proceed with uninstalling (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) echo "${d}" | xargs brew uninstall ;;
+            *) return 1 ;;
+          esac
+        ;;
+
+        casks|brew-cask-formulas|brew-cask-packages)
+          local p=$(<~/.dfpmm-brew-cask)
+          local d=$(comm -13 <(echo "${p}" | sort) <(brew cask list -1 | sort))
+
+          test -n "${d}" && read -p "Proceed with uninstalling (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
+          case "${proceed}" in
+            y|Y) echo "${d}" | xargs brew cask zap ;;
+            *) return 1 ;;
+          esac
+        ;;
+
+        gems|ruby-packages) return 0 ;;
+
+        npms|node-packages) return 0 ;;
+
+        pips|python-packages) return 0 ;;
+      esac
+    ;;
+
+    *) echo 'Command not found' ; return 1 ;;
+  esac
+}
+
 function escape() {
   printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
 

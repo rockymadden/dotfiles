@@ -1,6 +1,3 @@
-#!/usr/bin/env bash
-
-read -d '' packages <<"EOF"
 Zen
 atom-material-syntax
 atom-material-ui
@@ -49,25 +46,3 @@ regex-railroad-diagram
 script
 todo-show
 trailing-spaces
-EOF
-
-case "${1}" in
-  init) mkdir -p ~/.atom/packages ;;
-
-  install)
-    comm -13 <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort) <(echo "${packages}" | sort) | xargs apm install
-  ;;
-
-  sync)
-    ${0} uninstall
-    ${0} install
-  ;;
-
-  uninstall)
-    comm -13 <(echo "${packages}" | sort) <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort) | xargs apm uninstall
-  ;;
-
-  *) echo 'Command not found' ; exit 1 ;;
-esac
-
-exit 0
