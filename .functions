@@ -170,7 +170,6 @@ function dfpmm() {
 
         casks|brew-cask-formulas|brew-cask-packages)
           brew tap caskroom/cask
-          brew tap caskroom/versions
         ;;
 
         gems|ruby-packages) return 0 ;;
