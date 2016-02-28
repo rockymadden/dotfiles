@@ -49,7 +49,6 @@ slack-cli
 socat
 ssh-copy-id
 terminal-notifier
-tldr
 vim
 watchman
 wget
