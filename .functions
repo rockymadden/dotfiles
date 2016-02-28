@@ -315,8 +315,20 @@ function fs() {
   fi
 }
 
-function mkd() {
-  mkdir -p "$@" && cd "$_"
+function md5() {
+  openssl dgst -md5 "${1}" | cut -d' ' -f2
+}
+
+function sha1() {
+  openssl dgst -sha1 "${1}" | cut -d' ' -f2
+}
+
+function sha256() {
+  openssl dgst -sha256 "${1}" | cut -d' ' -f2
+}
+
+function sha512() {
+  openssl dgst -sha512 "${1}" | cut -d' ' -f2
 }
 
 function slack() {
