@@ -125,7 +125,7 @@
 			<key>Allow Title Reporting</key>
 			<false/>
 			<key>Ambiguous Double Width</key>
-			<true/>
+			<false/>
 			<key>Ansi 0 Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -857,7 +857,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>454205616.03825802</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>466907076.303666</real>
+	<real>475106035.15340298</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -922,7 +922,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-18T17:42:14Z</date>
+	<date>2016-01-22T03:11:35Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
