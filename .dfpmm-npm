@@ -1,8 +1,7 @@
-babel
 bower
 grunt-cli
 gulp
-jest-cli
-node-notifier
+nativefier
+particle-cli
 ramda-cli
-tldr
+tap-notify
