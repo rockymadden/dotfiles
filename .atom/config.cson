@@ -1,13 +1,16 @@
 "*":
-  "recent-files":
-    updated: false
-  "exception-reporting":
-    userId: "3693b2ab-2f02-8f93-38ce-d016022c40b1"
-  welcome:
-    showOnStartup: false
+  "atom-color-highlight": {}
+  "atom-material-ui":
+    fonts: {}
+    tabs:
+      compactTabs: true
+    treeView:
+      compactList: true
+    ui:
+      panelContrast: true
+  "autocomplete-plus": {}
   core:
     disabledPackages: [
-      "release-notes"
       "hash-n"
       "base-n"
       "vim-mode"
@@ -19,10 +22,16 @@
     ]
   editor:
     fontFamily: "Source Code Pro"
-    showInvisibles: true
-    showIndentGuide: true
-    preferredLineLength: 100
     invisibles: {}
+    preferredLineLength: 100
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "3693b2ab-2f02-8f93-38ce-d016022c40b1"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "highlight-selected":
+    minimumLength: 2
   linter:
     statusBar: "Show error of the selected line"
     subtleLinterErrors: [
@@ -30,27 +39,25 @@
       "jsxhint"
     ]
   "linter-jshint": {}
-  "autocomplete-plus": {}
-  "highlight-selected":
-    minimumLength: 2
   minimap:
+    autoToggle: true
     plugins:
-      "highlight-selected": true
       "color-highlight": true
       "find-and-replace": true
-    autoToggle: true
-  "atom-color-highlight": {}
-  react: {}
-  "tree-view":
-    hideIgnoredNames: true
+      "find-and-replaceDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
   "one-dark-ui":
     layoutMode: "Compact"
-  "file-watcher":
-    promptWhenFileHasChangedOnDisk: false
-  nuclide:
-    remoteProjectsConfig: []
   "one-light-ui":
     layoutMode: "Compact"
+  react: {}
+  "recent-files":
+    updated: false
+  "tree-view":
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
 ".coffee.jsx.source":
