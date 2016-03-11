@@ -48,7 +48,6 @@ redis
 rfc
 ruby
 rust
-scala
 slack-cli
 socat
 ssh-copy-id
