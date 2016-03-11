@@ -1,6 +1,7 @@
 Zen
 atom-material-syntax
 atom-material-ui
+atom-ternjs
 auto-detect-indentation
 autocomplete-paths
 circle-ci
