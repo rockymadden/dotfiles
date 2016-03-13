@@ -36,6 +36,7 @@ imagemagick
 jq
 mitmproxy
 moreutils
+multirust
 nmap
 nomad
 nvm
@@ -47,7 +48,6 @@ rbenv
 redis
 rfc
 ruby
-rust
 slack-cli
 socat
 ssh-copy-id
