@@ -27,10 +27,10 @@ language-rust
 language-scala
 language-swift
 linter
-linter-clojure
 linter-csslint
 linter-jshint
 linter-jsxhint
+linter-rust
 markdown-pdf
 merge-conflicts
 minimap
@@ -42,7 +42,7 @@ nuance-dark-syntax
 nuance-dark-ui
 pigments
 pretty-json
-react
+racer
 regex-railroad-diagram
 script
 todo-show
