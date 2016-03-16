@@ -2,6 +2,7 @@ ansible
 archey
 awscli
 asciinema
+asciinema2gif
 bash-completion
 bats
 bcrypt
