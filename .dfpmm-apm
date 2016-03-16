@@ -4,7 +4,6 @@ atom-material-ui
 atom-ternjs
 auto-detect-indentation
 autocomplete-paths
-circle-ci
 color-picker
 file-icons
 highlight-line
@@ -29,7 +28,6 @@ language-swift
 linter
 linter-csslint
 linter-jshint
-linter-jsxhint
 linter-rust
 markdown-pdf
 merge-conflicts
@@ -44,6 +42,5 @@ pigments
 pretty-json
 racer
 regex-railroad-diagram
-script
 todo-show
 trailing-spaces
