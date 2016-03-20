@@ -5,6 +5,7 @@ atom-ternjs
 auto-detect-indentation
 autocomplete-paths
 color-picker
+docblockr
 file-icons
 highlight-line
 highlight-selected
@@ -42,5 +43,6 @@ pigments
 pretty-json
 racer
 regex-railroad-diagram
+synced-sidebar
 todo-show
 trailing-spaces
