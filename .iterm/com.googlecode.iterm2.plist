@@ -114,9 +114,9 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame Preferences</key>
-	<string>394 152 924 485 0 0 1680 1027 </string>
+	<string>269 110 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 11 1673 1016 0 0 1680 1027 </string>
+	<string>0 4 1433 873 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -296,7 +296,7 @@
 			<key>Blur</key>
 			<false/>
 			<key>Blur Radius</key>
-			<real>7.0957403182983398</real>
+			<real>6.1503701210021973</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -689,7 +689,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>8000</integer>
+			<integer>8192</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -831,7 +831,7 @@
 			<key>Terminal Type</key>
 			<string>xterm</string>
 			<key>Transparency</key>
-			<real>0.1858704686164856</real>
+			<real>0.34854614734649658</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -854,10 +854,12 @@
 			<string>/Users/rocky</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>454205616.03825802</real>
+	<real>477716863.16567099</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>475106035.15340298</real>
+	<real>480825882.32036602</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -922,7 +924,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-22T03:11:35Z</date>
+	<date>2016-03-28T02:42:35Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -934,7 +936,7 @@
 	<key>SmartPlacement</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.17947717010974884</real>
+	<real>0.16589292883872986</real>
 	<key>SwitchTabModifier</key>
 	<integer>4</integer>
 	<key>SwitchWindowModifier</key>
