@@ -11,11 +11,6 @@ elif [ -f /etc/bash_completion ]; then
   source /etc/bash_completion
 fi
 
-# System statistics:
-echo '--------------------------------------------------------------------------------'
-archey -c
-echo '--------------------------------------------------------------------------------'
-
 # nvm:
 nvm use node 2>&1 > /dev/null
 
