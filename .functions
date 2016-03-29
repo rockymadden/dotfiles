@@ -320,7 +320,7 @@ function md5() {
 }
 
 function notify() {
-  echo "${1:-done}" | terminal-notifier -sound default
+  echo "${1:-done}" | terminal-notifier -sound Glass
 }
 
 function sha1() {
@@ -499,7 +499,6 @@ function vegeta() {
     ;;
   esac
 }
-
 
 function wget() {
   local BIN=$(which wget)
