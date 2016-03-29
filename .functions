@@ -319,6 +319,10 @@ function md5() {
   openssl dgst -md5 "${1}" | cut -d' ' -f2
 }
 
+function notify() {
+  echo "${1:-done}" | terminal-notifier -sound default
+}
+
 function sha1() {
   openssl dgst -sha1 "${1}" | cut -d' ' -f2
 }
@@ -397,6 +401,10 @@ function ssh() {
   local BIN=$(which ssh)
 
   case "${1}" in
+    forget|and-forget|then-forget)
+      ${BIN} -o UserKnownHostsFile=/dev/null ${2}
+    ;;
+
     forward)
       test "$#" -lt 2 && return 1
 
@@ -421,6 +429,7 @@ function ssh() {
 
     --binwrap)
       echo 'Usage:'
+      echo '  ssh forget [username]@<remote_host>'
       echo '  ssh forward [username]@<remote_host>:<remote_port> [local_port]'
     ;;
 
