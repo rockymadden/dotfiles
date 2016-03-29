@@ -9,6 +9,8 @@ docblockr
 file-icons
 highlight-line
 highlight-selected
+git-log
+git-time-machine
 language-agda
 language-apache
 language-docker
@@ -34,6 +36,7 @@ markdown-pdf
 merge-conflicts
 minimap
 minimap-find-and-replace
+minimap-git-diff
 minimap-highlight-selected
 neutron-syntax
 neutron-ui
