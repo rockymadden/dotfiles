@@ -1,13 +1,23 @@
 "*":
   "atom-color-highlight": {}
   "atom-material-ui":
+    colors:
+      abaseColor:
+        red: 33
+        green: 150
+        blue: 243
+        alpha: 1
+      predefinedColor: "Blue"
     fonts: {}
     tabs:
       compactTabs: true
+      tintedTabBar: true
     treeView:
+      blendTabs: true
       compactList: true
     ui:
       panelContrast: true
+      panelShadows: true
   "autocomplete-plus": {}
   core:
     disabledPackages: [
@@ -18,7 +28,7 @@
     followSymlinks: true
     themes: [
       "atom-material-ui"
-      "atom-material-syntax"
+      "atom-material-syntax-light"
     ]
   editor:
     fontFamily: "Source Code Pro"
@@ -30,6 +40,9 @@
     userId: "3693b2ab-2f02-8f93-38ce-d016022c40b1"
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
+  "git-log":
+    fontFamily: "Source Code Pro"
+    fontScale: 1
   "highlight-selected":
     minimumLength: 2
   linter:
@@ -45,6 +58,8 @@
       "color-highlight": true
       "find-and-replace": true
       "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
   "one-dark-ui":
