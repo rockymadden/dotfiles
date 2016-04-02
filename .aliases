@@ -18,12 +18,8 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias -- -='cd -'
 
-# Color flag
-if ls --color > /dev/null 2>&1; then
-  colorflag='--color'
-else
-  colorflag='-G'
-fi
+# history
+alias h='history'
 
 # ls
 alias l="ls -lF ${colorflag}"
