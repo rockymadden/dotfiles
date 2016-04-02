@@ -2,7 +2,6 @@ ansible
 awscli
 asciinema
 asciinema2gif
-bash-completion
 bats
 bcrypt
 circleci-cli
@@ -60,3 +59,4 @@ wget
 wireshark
 yank
 zenhub-cli
+zsh

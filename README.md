@@ -7,7 +7,7 @@
 [![circleci](https://circleci.com/gh/rockymadden/dotfiles.svg?style=shield)](https://circleci.com/gh/rockymadden/dotfiles)
 
 ## Installation
-```bash
+```zsh
 $ brew tap rockymadden/dotfiles
 $ brew dotfiles install rockymadden
 ```
