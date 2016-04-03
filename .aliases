@@ -33,6 +33,10 @@ alias -- -='cd -'
 # jobs
 alias jb='jobs'
 
+# zsh
+alias zsh-upgrade='upgrade_oh_my_zsh'
+alias zsh-stats='zsh_stats'
+
 # Miscellaneous
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias copy="tr -d '\n' | pbcopy"
