@@ -30,6 +30,9 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias -- -='cd -'
 
+# jobs
+alias jb='jobs'
+
 # Miscellaneous
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias copy="tr -d '\n' | pbcopy"
