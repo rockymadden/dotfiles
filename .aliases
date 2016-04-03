@@ -1,13 +1,13 @@
 alias sudo='sudo '
 
-# circleci
-alias ci='circleci'
-alias cib='circleci browse'
-
 # github/hub
 eval "$(hub alias -s)"
 alias gh='hub'
 alias ghb='hub browse'
+
+# circleci
+alias ci='circleci'
+alias cib='circleci browse'
 
 # history
 alias h='history'
@@ -16,7 +16,7 @@ alias hg='history | grep '
 # ls
 alias l='ls -lF'
 alias la='ls -laF'
-alias lsd="ls -lF | grep --color=never '^d'"
+alias lsg="ls -lF | grep --color=never '^d'"
 
 # cd
 alias dc='cd ~/Documents'
@@ -30,7 +30,7 @@ alias -- -='cd -'
 
 # Miscellaneous
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias clipboard-copy="tr -d '\n' | pbcopy"
+alias copy="tr -d '\n' | pbcopy"
 alias desktop-on="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias desktop-off="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias dns-flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
