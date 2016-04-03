@@ -4,6 +4,7 @@ alias sudo='sudo '
 eval "$(hub alias -s)"
 alias gh='hub'
 alias ghb='hub browse'
+alias ghc='hub clone'
 
 # git
 alias g='git'
@@ -12,10 +13,10 @@ alias gco='git co'
 alias gd='git done'
 alias ge='git eject'
 alias gf='git feature'
-alias gld='git detail'
+alias gg='git graph'
 alias gp='git push'
 alias gr='git rollback'
-alias gs='git sync'
+alias gs='git status'
 alias gu='git undo'
 
 # circleci
