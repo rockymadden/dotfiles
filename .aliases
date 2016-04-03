@@ -8,6 +8,8 @@ alias ghb='hub browse'
 # circleci
 alias ci='circleci'
 alias cib='circleci browse'
+alias cin='circleci notify'
+alias cit='circleci trigger'
 
 # history
 alias h='history'
