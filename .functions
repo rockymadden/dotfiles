@@ -316,7 +316,7 @@ function md5() {
 }
 
 function notify() {
-  echo "${1:-done}" | terminal-notifier -sound Glass
+  echo "${*:-done}" | terminal-notifier -sound Glass
 }
 
 function sha1() {
