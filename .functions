@@ -26,15 +26,13 @@ function codepoint() {
 }
 
 function curl() {
-  local BIN=$(which curl)
-
   case "${1}" in
     finlink)
-      ${BIN} "${2}" -s -L -I -o /dev/null -w "%{http_code}: %{url_effective}\\n"
+      command curl "${2}" -s -L -I -o /dev/null -w "%{http_code}: %{url_effective}\\n"
     ;;
 
     follow)
-      local resp=$(${BIN} "${2}" -s -I -o /dev/null -w "%{http_code}|%{redirect_url}")
+      local resp=$(command curl "${2}" -s -I -o /dev/null -w "%{http_code}|%{redirect_url}")
       IFS='|' read -a tuple <<< "${resp}"
 
       echo "${tuple[0]}: ${2}"
@@ -52,7 +50,7 @@ function curl() {
     ;;
 
     *)
-      ${BIN} "${@:1}"
+      command curl "${@:1}"
     ;;
   esac
 }
@@ -72,68 +70,66 @@ function digga() {
 }
 
 function docker() {
-  local BIN=$(which docker)
-
   case "$1" in
     bash)
-      ${BIN} exec -it "${2}" bash
+      command docker exec -it "${2}" bash
     ;;
 
     daemonize)
-      ${BIN} run -d -P "${@:2}"
+      command docker run -d -P "${@:2}"
     ;;
 
     flatten)
-      ${BIN} export $(${BIN} run -d "${2}" /bin/bash) | ${BIN} import - "${3}"
+      command docker export $(command docker run -d "${2}" /bin/bash) | command docker import - "${3}"
     ;;
 
     interact)
-      ${BIN} run -i -t -P "${@:2}"
+      command docker run -i -t -P "${@:2}"
     ;;
 
     ip)
-      ${BIN} inspect -f '{{.NetworkSettings.IPAddress}}' "${2}"
+      command docker inspect -f '{{.NetworkSettings.IPAddress}}' "${2}"
     ;;
 
     mac)
-      ${BIN} inspect -f '{{.NetworkSettings.MacAddress}}' "${2}"
+      command docker inspect -f '{{.NetworkSettings.MacAddress}}' "${2}"
     ;;
 
     ports)
-      ${BIN} inspect -f '{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' "${2}"
+      command docker inspect -f '{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' "${2}"
     ;;
 
     rmall)
-      ps=$(${BIN} ps -a -q)
-      [ -n "$ps" ] && docker stopall && ${BIN} rm "${@:2}" $ps
+      ps=$(command docker ps -a -q)
+      [ -n "$ps" ] && docker stopall && command docker rm "${@:2}" $ps
     ;;
 
     rmstopped)
-      ps=$(${BIN} ps -a -q -f 'status=exited')
-      [ -n "$ps" ] && ${BIN} rm "${@:2}" $ps
+      ps=$(command docker ps -a -q -f 'status=exited')
+      [ -n "$ps" ] && command docker rm "${@:2}" $ps
     ;;
 
     rmiall)
-      images=$(${BIN} images -q)
-      [ -n "$images" ] && docker stopall && docker rmall && ${BIN} rmi "${@:2}" $images
+      images=$(command docker images -q)
+      [ -n "$images" ] && docker stopall && docker rmall && command docker rmi "${@:2}" $images
     ;;
 
     rmidangling)
-      images=$(${BIN} images -q -f 'dangling=true')
-      [ -n "$images" ] && ${BIN} rmi "${@:2}" $images
+      images=$(command docker images -q -f 'dangling=true')
+      [ -n "$images" ] && command docker rmi "${@:2}" $images
     ;;
 
     statsall)
-      ${BIN} stats "${@:2}" $(${BIN} ps -q)
+      command docker stats "${@:2}" $(command docker ps -q)
     ;;
 
     stopall)
-      ps=$(${BIN} ps -a -q)
-      [ -n "$ps" ] && ${BIN} stop "${@:2}" $ps
+      ps=$(command docker ps -a -q)
+      [ -n "$ps" ] && command docker stop "${@:2}" $ps
     ;;
 
     volumes)
-      ${BIN} inspect -f '{{$conf := .Mounts}} {{(index $conf 0).Destination}} -> {{(index $conf 0).Source}}' "${2}"
+      command docker inspect -f '{{$conf := .Mounts}} {{(index $conf 0).Destination}} -> {{(index $conf 0).Source}}' "${2}"
     ;;
 
     --binwrap)
@@ -150,7 +146,7 @@ function docker() {
     ;;
 
     *)
-      ${BIN} "${@:1}"
+      command docker "${@:1}"
     ;;
   esac
 }
@@ -398,11 +394,9 @@ function socat() {
 }
 
 function ssh() {
-  local BIN=$(which ssh)
-
   case "${1}" in
     forget|and-forget|then-forget)
-      ${BIN} -o UserKnownHostsFile=/dev/null ${2}
+      command ssh -o UserKnownHostsFile=/dev/null ${2}
     ;;
 
     forward)
@@ -422,8 +416,8 @@ function ssh() {
       esac
 
       case "${a[0]}" in
-        *@*) ${BIN} -N -L ${lp}:localhost:${rp} -l ${a[0]/@/ } & ;;
-        *) ${BIN} -N -L ${lp}:localhost:${rp} -l $(whoami) ${a[0]} & ;;
+        *@*) command ssh -N -L ${lp}:localhost:${rp} -l ${a[0]/@/ } & ;;
+        *) command ssh -N -L ${lp}:localhost:${rp} -l $(whoami) ${a[0]} & ;;
       esac
     ;;
 
@@ -434,7 +428,7 @@ function ssh() {
     ;;
 
     *)
-      ${BIN} "${@:1}"
+      command ssh "${@:1}"
     ;;
   esac
 }
@@ -470,7 +464,7 @@ function targz() {
 }
 
 function title() {
-  echo -ne "\033]0;"$*"\007"
+  echo -ne "\e]1;$*\a"
 }
 
 function unidecode() {
@@ -482,8 +476,6 @@ function unidecode() {
 }
 
 function vegeta() {
-  local BIN=$(which vegeta)
-
   case "$1" in
     GET)
       echo "GET ${2}" | vegeta attack -duration="${3}" -rate="${4}" | tee /tmp/vegeta.bin | vegeta report
@@ -495,17 +487,15 @@ function vegeta() {
     ;;
 
     *)
-      ${BIN} "${@:1}"
+      command vegeta "${@:1}"
     ;;
   esac
 }
 
 function wget() {
-  local BIN=$(which wget)
-
   case "$1" in
     mirror)
-      ${BIN} -mkpnp "${2}"
+      command wget -mkpnp "${2}"
     ;;
 
     --binwrap)
@@ -514,7 +504,7 @@ function wget() {
     ;;
 
     *)
-      ${BIN} "${@:1}"
+      command wget "${@:1}"
     ;;
   esac
 }
