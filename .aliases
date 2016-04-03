@@ -1,14 +1,24 @@
-# Eval aliases
-eval "$(hub alias -s)"
-
-# Sudo-able alises
 alias sudo='sudo '
 
-# Commands
+# circleci
 alias ci='circleci'
-alias gh='hub'
+alias cib='circleci browse'
 
-# Navigation
+# github/hub
+eval "$(hub alias -s)"
+alias gh='hub'
+alias ghb='hub browse'
+
+# history
+alias h='history'
+alias hg='history | grep '
+
+# ls
+alias l='ls -lF'
+alias la='ls -laF'
+alias lsd="ls -lF | grep --color=never '^d'"
+
+# cd
 alias dc='cd ~/Documents'
 alias dl='cd ~/Downloads'
 alias dt='cd ~/Desktop'
@@ -18,68 +28,24 @@ alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias -- -='cd -'
 
-# history
-alias h='history'
-
-# ls
-alias l="ls -lF"
-alias la="ls -laF"
-alias lsd="ls -lF | grep --color=never '^d'"
-alias ls="command ls"
-
-# Week number
-alias week='date +%V'
-
-# Stopwatch
-alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
-
-# IP addresses
-alias wanip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias lanip="ipconfig getifaddr en0"
-alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
-
-# Flush DNS
-alias flushdns="discoveryutil mdnsflushcache"
-
-# Clean up LaunchServices to remove duplicates in the "Open With" menu
-alias owcleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
-alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-
-# Canonical hex dump
-command -v hd > /dev/null || alias hd="hexdump -C"
-
-# Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
-
-# Recursively delete .DS_Store files
-alias dscleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
-# Spotlight
-alias spotoff="sudo mdutil -a -i off"
-alias spoton="sudo mdutil -a -i on"
-
-# Hidden files
-alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
-alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
-
-# Desktop icons
-alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-
-# URL-encoding
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-
-# HTTP verbs
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-  alias "$method"="lwp-request -m '$method'"
-done
-unset method
-
-# Lock the screen
+# Miscellaneous
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
-# Reload the shell
-alias reload="exec $SHELL -l"
+alias clipboard-copy="tr -d '\n' | pbcopy"
+alias desktop-on="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias desktop-off="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias dns-flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias dsstore-cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias hidden-on="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hidden-off="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+alias http-dump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
+alias http-sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+alias ip-wan="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ip-lan="ipconfig getifaddr en0"
+alias ip-all="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+alias reload="exec ${SHELL} -l"
+alias spotlight-off="sudo mdutil -a -i off"
+alias spotlight-on="sudo mdutil -a -i on"
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+alias week='date +%V'
