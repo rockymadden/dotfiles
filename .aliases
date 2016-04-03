@@ -1,13 +1,29 @@
 alias sudo='sudo '
 
-# github/hub
+# hub
 eval "$(hub alias -s)"
 alias gh='hub'
 alias ghb='hub browse'
+alias ghc='hub clone'
+
+# git
+alias g='git'
+alias gcm='git cm'
+alias gco='git co'
+alias gd='git done'
+alias ge='git eject'
+alias gf='git feature'
+alias gg='git graph'
+alias gp='git push'
+alias gr='git rollback'
+alias gs='git status'
+alias gu='git undo'
 
 # circleci
 alias ci='circleci'
 alias cib='circleci browse'
+alias cin='circleci notify'
+alias cit='circleci trigger'
 
 # history
 alias h='history'
@@ -27,6 +43,13 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias -- -='cd -'
+
+# jobs
+alias jb='jobs'
+
+# zsh
+alias zsh-upgrade='upgrade_oh_my_zsh'
+alias zsh-stats='zsh_stats'
 
 # Miscellaneous
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"

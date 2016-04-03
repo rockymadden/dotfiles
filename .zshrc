@@ -15,7 +15,7 @@ DEFAULT_USER=rockymadden
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history background_jobs time context)
-POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_STATUS_VERBOSE=true
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -62,7 +62,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew docker git-extras httpie)
+plugins=(extract)
 
 # User configuration
 

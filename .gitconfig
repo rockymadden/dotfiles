@@ -17,13 +17,13 @@
 	cm = !git add -A && git commit -m
 	co = checkout
 	cob = checkout -b
-	detail = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	done = "!f() { yes | git ghflow-end; }; f"
+	done = ghflow-end
 	eject = !git rollback && git checkout master && git rebase --abort
 	feature = ghflow-start
 	ghflow-clean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -I{} git branch -d {}; }; f"
 	ghflow-end = "!f() { git checkout ${1-master} && git sync && git ghflow-clean ${1-master}; }; f"
 	ghflow-start = !git ghflow-clean master && git cob
+	graph = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	normalize = !git remote-normalize
 	redo = !git undo && git cm
 	rollback = reset HEAD~1 --hard
