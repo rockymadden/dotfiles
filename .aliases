@@ -27,7 +27,7 @@ alias cit='circleci trigger'
 
 # history
 alias h='history'
-alias hg='history | grep '
+alias hg='history | grep'
 
 # ls
 alias l='ls -lF'
@@ -50,6 +50,9 @@ alias jb='jobs'
 # zsh
 alias zsh-upgrade='upgrade_oh_my_zsh'
 alias zsh-stats='zsh_stats'
+
+# notify
+alias nf='notify'
 
 # Miscellaneous
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
