@@ -747,11 +747,11 @@
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>527 303 511 77 0 0 1440 877 </string>
+	<string>527 37 511 77 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>269 110 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 11 1440 858 0 0 1440 877 </string>
+	<string>0 4 1440 873 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1273,11 +1273,11 @@
 			<key>Name</key>
 			<string>rockymadden</string>
 			<key>Non Ascii Font</key>
-			<string>SauceCodePowerline-Regular 13</string>
+			<string>SourceCodePro+Powerline+AwesomeRegular 13</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodePowerline-Regular 13</string>
+			<string>SourceCodePro+Powerline+AwesomeRegular 13</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
