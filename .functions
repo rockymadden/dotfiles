@@ -464,7 +464,7 @@ function targz() {
 }
 
 function title() {
-  echo -ne "\033]0;"$*"\007"
+  echo -ne "\e]1;$*\a"
 }
 
 function unidecode() {
