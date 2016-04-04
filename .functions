@@ -463,10 +463,6 @@ function targz() {
   echo "${tmpFile}.gz created successfully."
 }
 
-function title() {
-  echo -ne "\e]1;$*\a"
-}
-
 function unidecode() {
   perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
 
@@ -488,23 +484,6 @@ function vegeta() {
 
     *)
       command vegeta "${@:1}"
-    ;;
-  esac
-}
-
-function wget() {
-  case "$1" in
-    mirror)
-      command wget -mkpnp "${2}"
-    ;;
-
-    --binwrap)
-      echo 'Usage:'
-      echo '  wget mirror <baseurl>'
-    ;;
-
-    *)
-      command wget "${@:1}"
     ;;
   esac
 }
