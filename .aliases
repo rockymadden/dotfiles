@@ -1,3 +1,4 @@
+alias aliases='grep alias < ~/.aliases | cut -c 7- | sort'
 alias sudo='sudo '
 
 # hub
@@ -14,6 +15,8 @@ alias gd='git done'
 alias ge='git eject'
 alias gf='git feature'
 alias gg='git graph'
+alias gla='git la'
+alias gls='git ls'
 alias gp='git push'
 alias gr='git rollback'
 alias gs='git status'
@@ -45,14 +48,14 @@ alias .....='cd ../../../..'
 alias -- -='cd -'
 
 # jobs
-alias jb='jobs'
+alias j='jobs'
 
 # zsh
 alias zsh-upgrade='upgrade_oh_my_zsh'
 alias zsh-stats='zsh_stats'
 
 # notify
-alias nf='notify'
+alias n='notify'
 
 # ledger
 alias ldg='ledger --strict -f'
@@ -71,6 +74,7 @@ alias http-sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias ip-wan="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip-lan="ipconfig getifaddr en0"
 alias ip-all="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias iso8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias mirror='wget -mkpnp'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 alias reload="exec ${SHELL} -l"
