@@ -22,7 +22,7 @@ alias gu='git undo'
 # circleci
 alias ci='circleci'
 alias cib='circleci browse'
-alias cin='circleci notify'
+alias cinf='circleci notify'
 alias cit='circleci trigger'
 
 # history
