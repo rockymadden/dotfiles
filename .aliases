@@ -1,3 +1,4 @@
+alias aliases='grep alias < ~/.aliases | cut -c 7- | sort'
 alias sudo='sudo '
 
 # hub
