@@ -71,6 +71,7 @@ alias http-sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias ip-wan="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip-lan="ipconfig getifaddr en0"
 alias ip-all="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+alias iso8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias mirror='wget -mkpnp'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 alias reload="exec ${SHELL} -l"
