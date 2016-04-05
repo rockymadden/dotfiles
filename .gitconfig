@@ -25,7 +25,9 @@
 	ghflow-clean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -I{} git branch -d {}; }; f"
 	ghflow-end = "!f() { git checkout ${1-master} && git sync && git ghflow-clean ${1-master}; }; f"
 	ghflow-start = !git ghflow-clean master && git cob
-	graph = !git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	la = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=short
+	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	normalize = remote rename origin gh
 	redo = !git undo && git cm
 	rollback = reset HEAD~1 --hard
