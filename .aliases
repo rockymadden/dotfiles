@@ -24,7 +24,7 @@ alias gu='git undo'
 # circleci
 alias ci='circleci'
 alias cib='circleci browse'
-alias cinf='circleci notify'
+alias cin='circleci notify'
 alias cit='circleci trigger'
 
 # history
@@ -47,14 +47,14 @@ alias .....='cd ../../../..'
 alias -- -='cd -'
 
 # jobs
-alias jb='jobs'
+alias j='jobs'
 
 # zsh
 alias zsh-upgrade='upgrade_oh_my_zsh'
 alias zsh-stats='zsh_stats'
 
 # notify
-alias nf='notify'
+alias n='notify'
 
 # ledger
 alias ldg='ledger --strict -f'
