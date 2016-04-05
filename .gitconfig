@@ -1,6 +1,7 @@
 [user]
 	name = Rocky Madden
 	email = git@rockymadden.com
+	signingkey = D654181
 [credential]
 	helper = osxkeychain
 [core]
