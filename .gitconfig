@@ -12,6 +12,7 @@
 [push]
 	default = simple
 [alias]
+	aliases = !git config -l | grep alias | cut -c 7-
 	amend = commit -a --amend
 	bugfix = ghflow-start
 	cm = !git add -A && git commit -m
