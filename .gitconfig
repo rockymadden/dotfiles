@@ -18,6 +18,7 @@
 	cm = !git add -A && git commit -m
 	co = checkout
 	cob = checkout -b
+	df = "!f() { git diff "$1"^.."$1"; }; f"
 	done = ghflow-end
 	eject = !git rollback && git checkout master && git rebase --abort
 	feature = ghflow-start
