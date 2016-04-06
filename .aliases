@@ -1,13 +1,25 @@
-alias aliases='grep alias < ~/.aliases | cut -c 7- | sort'
 alias sudo='sudo '
-
-# hub
 eval "$(hub alias -s)"
-alias gh='hub'
-alias ghb='hub browse'
-alias ghc='hub clone'
 
-# git
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias -- -='cd -'
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+alias aliases='grep alias < ~/.aliases | cut -c 7- | sort'
+alias ci='circleci'
+alias cib='circleci browse'
+alias cin='circleci notify'
+alias cit='circleci trigger'
+alias copy="tr -d '\n' | pbcopy"
+alias dc='cd ~/Documents'
+alias desktop-on="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+alias desktop-off="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias dl='cd ~/Downloads'
+alias dns-flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+alias dsstore-cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+alias dt='cd ~/Desktop'
 alias g='git'
 alias gcm='git cm'
 alias gco='git co'
@@ -15,58 +27,17 @@ alias gd='git done'
 alias ge='git eject'
 alias gf='git feature'
 alias gg='git graph'
+alias gh='hub'
+alias ghb='hub browse'
+alias ghc='hub clone'
 alias gla='git la'
 alias gls='git ls'
 alias gp='git push'
 alias gr='git rollback'
 alias gs='git status'
 alias gu='git undo'
-
-# circleci
-alias ci='circleci'
-alias cib='circleci browse'
-alias cin='circleci notify'
-alias cit='circleci trigger'
-
-# history
 alias h='history'
 alias hg='history | grep'
-
-# ls
-alias l='ls -lF'
-alias la='ls -laF'
-alias lsg="ls -lF | grep --color=never '^d'"
-
-# cd
-alias dc='cd ~/Documents'
-alias dl='cd ~/Downloads'
-alias dt='cd ~/Desktop'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias -- -='cd -'
-
-# jobs
-alias j='jobs'
-
-# zsh
-alias zsh-upgrade='upgrade_oh_my_zsh'
-alias zsh-stats='zsh_stats'
-
-# notify
-alias n='notify'
-
-# ledger
-alias ldg='ledger --strict -f'
-
-# Miscellaneous
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias copy="tr -d '\n' | pbcopy"
-alias desktop-on="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias desktop-off="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias dns-flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
-alias dsstore-cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 alias hidden-on="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hidden-off="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
 alias http-dump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
@@ -75,12 +46,22 @@ alias ip-wan="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip-lan="ipconfig getifaddr en0"
 alias ip-all="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias iso8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
+alias j='jobs'
+alias l='ls -lF'
+alias la='ls -laF'
+alias ldg='ledger --strict -f'
+alias lsg="ls -lF | grep --color=never '^d'"
 alias mirror='wget -mkpnp'
+alias n='notify'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 alias reload="exec ${SHELL} -l"
+alias ssh-as='f() { ssh -i ~/.ssh/"${1}" "${@:2}"; }; f'
+alias ssh-forget='f() { ssh -o UserKnownHostsFile=/dev/null "${1}" "${@:2}"; }; f'
 alias spotlight-off="sudo mdutil -a -i off"
 alias spotlight-on="sudo mdutil -a -i on"
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias title='f() { echo -ne "\e]1;$*\a"; }; f'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 alias week='date +%V'
+alias zsh-upgrade='upgrade_oh_my_zsh'
+alias zsh-stats='zsh_stats'
