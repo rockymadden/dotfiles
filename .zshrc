@@ -1,8 +1,15 @@
 # Source dotfiles.
 for file in ~/.{exports,_exports,aliases,_aliases,functions,_functions,sources,_sources}; do
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
-done
-unset file
+done; unset file
+
+# GPG agent.
+[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+  export GPG_AGENT_INFO
+else
+  eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/rockymadden/.oh-my-zsh
