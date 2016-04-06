@@ -4,15 +4,13 @@ for file in ~/.{exports,_exports,aliases,_aliases,functions,_functions,sources,_
 done; unset file
 
 # GPG agent.
-[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+[ -f ~/.gnupg/.gpg-agent-info ] && source ~/.gnupg/.gpg-agent-info
 if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
   export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
 else
-  eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+  eval $(gpg-agent --daemon --enable-ssh-support --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
-
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/rockymadden/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
