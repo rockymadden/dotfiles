@@ -393,43 +393,25 @@ function socat() {
   esac
 }
 
-function ssh() {
-  case "${1}" in
-    forget|and-forget|then-forget)
-      command ssh -o UserKnownHostsFile=/dev/null ${2}
+function ssh-forward() {
+  test "$#" -lt 1 && return 1
+
+  a=(${1//:/ })
+
+  case "$#" in
+    2)
+      lp=${2}
+      rp=${a[1]}
     ;;
-
-    forward)
-      test "$#" -lt 2 && return 1
-
-      a=(${2//:/ })
-
-      case "$#" in
-        3)
-          lp=${3}
-          rp=${a[1]}
-        ;;
-        2)
-          lp=${a[1]}
-          rp=${a[1]}
-        ;;
-      esac
-
-      case "${a[0]}" in
-        *@*) command ssh -N -L ${lp}:localhost:${rp} -l ${a[0]/@/ } & ;;
-        *) command ssh -N -L ${lp}:localhost:${rp} -l $(whoami) ${a[0]} & ;;
-      esac
+    1)
+      lp=${a[1]}
+      rp=${a[1]}
     ;;
+  esac
 
-    --binwrap)
-      echo 'Usage:'
-      echo '  ssh forget [username]@<remote_host>'
-      echo '  ssh forward [username]@<remote_host>:<remote_port> [local_port]'
-    ;;
-
-    *)
-      command ssh "${@:1}"
-    ;;
+  case "${a[0]}" in
+    *@*) ssh -N -L ${lp}:localhost:${rp} -l ${a[0]/@/ } ;;
+    *) ssh -N -L ${lp}:localhost:${rp} -l $(whoami) ${a[0]} ;;
   esac
 }
 
