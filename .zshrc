@@ -7,9 +7,8 @@ done; unset file
 [ -f ~/.gnupg/.gpg-agent-info ] && source ~/.gnupg/.gpg-agent-info
 if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
   export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
 else
-  eval $(gpg-agent --daemon --enable-ssh-support --write-env-file ~/.gnupg/.gpg-agent-info)
+  eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
 fi
 
 # Set name of the theme to load.
