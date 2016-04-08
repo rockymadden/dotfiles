@@ -56,6 +56,9 @@ alias mirror='wget -mkpnp'
 alias n='notify'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 alias reload="exec ${SHELL} -l"
+alias scp-as='f() { scp -i ~/.ssh/"${1}" "${@:2}"; }; f'
+alias scp-as-forget='f() { scp -o UserKnownHostsFile=/dev/null -i ~/.ssh/"${1}" "${@:2}"; }; f'
+alias scp-forget='f() { scp -o UserKnownHostsFile=/dev/null "${1}" "${@:2}"; }; f'
 alias ssh-as='f() { ssh -i ~/.ssh/"${1}" "${@:2}"; }; f'
 alias ssh-as-forget='f() { ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/"${1}" "${@:2}"; }; f'
 alias ssh-forget='f() { ssh -o UserKnownHostsFile=/dev/null "${1}" "${@:2}"; }; f'
@@ -68,5 +71,7 @@ alias week='date +%V'
 alias zsh-upgrade='upgrade_oh_my_zsh'
 alias zsh-stats='zsh_stats'
 
+alias scp-and-forget='scp-forget'
+alias scp-as-and-forget='scp-as-forget'
 alias ssh-and-forget='ssh-forget'
 alias ssh-as-and-forget='ssh-as-forget'
