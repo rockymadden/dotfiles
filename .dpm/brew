@@ -44,6 +44,7 @@ nvm
 openssl
 optipng
 otto
+p7zip
 python
 rbenv
 redis
