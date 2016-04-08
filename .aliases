@@ -47,11 +47,12 @@ alias ip-lan="ipconfig getifaddr en0"
 alias ip-all="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias iso8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
 alias j='jobs'
-alias l='ls -lF'
-alias la='ls -laF'
+unalias l # zsh
+alias la='ls -lAF'
 alias ldg='ledger --strict -f'
 alias ll='ls -lhA'
-alias lsg="ls -lF | grep --color=never '^d'"
+unalias lsa # zsh
+alias lsg='ls -lhA | grep'
 alias mirror='wget -mkpnp'
 alias n='notify'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
