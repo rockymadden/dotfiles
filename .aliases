@@ -55,6 +55,8 @@ alias lsg="ls -lF | grep --color=never '^d'"
 alias mirror='wget -mkpnp'
 alias n='notify'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+alias ps='ps aux'
+alias psg='command ps aux | grep -v grep | grep -i -e VSZ -e'
 alias reload="exec ${SHELL} -l"
 alias scp-as='f() { scp -i ~/.ssh/"${1}" "${@:2}"; }; f'
 alias scp-as-forget='f() { scp -o UserKnownHostsFile=/dev/null -i ~/.ssh/"${1}" "${@:2}"; }; f'
