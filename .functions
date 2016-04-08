@@ -151,8 +151,8 @@ function docker() {
   esac
 }
 
-# dotfile package manager manager
-function dfpmm() {
+# dotfile package manager
+function dpm() {
   case "${1}" in
     init)
       case "${2}" in
@@ -179,7 +179,7 @@ function dfpmm() {
     install)
       case "${2}" in
         apms|apm-packages|atom-packages)
-          local p=$(<~/.dfpmm-apm)
+          local p=$(<~/.dpm/apm)
           local d=$(comm -13 <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort) <(echo "${p}" | sort))
 
           test -n "${d}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
@@ -190,7 +190,7 @@ function dfpmm() {
         ;;
 
         brews|brew-forumulas|brew-packages)
-          local p=$(<~/.dfpmm-brew)
+          local p=$(<~/.dpm/brew)
           local d=$(comm -13 <(brew list -1 | sed 's|rockymadden/rockymadden/||' | sort) <(echo "${p}" | sort))
 
           test -n "${d}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
@@ -201,7 +201,7 @@ function dfpmm() {
         ;;
 
         casks|brew-cask-formulas|brew-cask-packages)
-          local p=$(<~/.dfpmm-brew-cask)
+          local p=$(<~/.dpm/brew-cask)
           local d=$(comm -13 <(brew cask list -1 | sort) <(echo "${p}" | sort))
 
           test -n "${d}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
@@ -212,7 +212,7 @@ function dfpmm() {
         ;;
 
         gems|ruby-packages)
-          local p=$(<~/.dfpmm-gem)
+          local p=$(<~/.dpm/gem)
 
           test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
           case "${proceed}" in
@@ -222,7 +222,7 @@ function dfpmm() {
         ;;
 
         npms|node-packages)
-          local p=$(<~/.dfpmm-npm)
+          local p=$(<~/.dpm/npm)
 
           test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
           case "${proceed}" in
@@ -232,7 +232,7 @@ function dfpmm() {
         ;;
 
         pips|python-packages)
-          local p=$(<~/.dfpmm-pip)
+          local p=$(<~/.dpm/pip)
 
           test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
           case "${proceed}" in
@@ -246,7 +246,7 @@ function dfpmm() {
     uninstall)
       case "${2}" in
         apms|apm-packages|atom-packages)
-          local p=$(<~/.dfpmm-apm)
+          local p=$(<~/.dpm/apm)
           local d=$(comm -13 <(echo "${p}" | sort) <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort))
 
           test -n "${d}" && read -p "Proceed with uninstalling (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
@@ -257,7 +257,7 @@ function dfpmm() {
         ;;
 
         brews|brew-forumulas|brew-packages)
-          local p=$(<~/.dfpmm-brew)
+          local p=$(<~/.dpm/brew)
           local d=$(comm -13 <(echo "${p}" | sort) <(brew leaves | sed 's|rockymadden/rockymadden/||' | sort))
 
           test -n "${d}" && read -p "Proceed with uninstalling (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
@@ -268,7 +268,7 @@ function dfpmm() {
         ;;
 
         casks|brew-cask-formulas|brew-cask-packages)
-          local p=$(<~/.dfpmm-brew-cask)
+          local p=$(<~/.dpm/brew-cask)
           local d=$(comm -13 <(echo "${p}" | sort) <(brew cask list -1 | sort))
 
           test -n "${d}" && read -p "Proceed with uninstalling (y/n)? Packages: $(echo "${d}" | tr '\n' ' ')" proceed
