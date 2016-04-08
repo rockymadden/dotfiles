@@ -29,6 +29,7 @@ gnu-tar
 gnupg
 gnupg2
 go
+gpg-agent
 heroku-toolbelt
 httpie
 hub
