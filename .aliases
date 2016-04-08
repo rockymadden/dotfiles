@@ -50,6 +50,7 @@ alias j='jobs'
 alias l='ls -lF'
 alias la='ls -laF'
 alias ldg='ledger --strict -f'
+alias ll='ls -lhA'
 alias lsg="ls -lF | grep --color=never '^d'"
 alias mirror='wget -mkpnp'
 alias n='notify'
