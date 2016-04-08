@@ -1,4 +1,5 @@
-# Core
+/target
+/build
 *.diff
 *.err
 *.orig
@@ -10,25 +11,6 @@
 *~
 *#
 .git
-
-# OS
 .DS_Store
-
-# Build
-target
-build
-
-# Node
 node_modules
-
-# Bower
 bower_components
-
-# Haskell
-.cabal-sandbox
-_cache
-_site
-*.hi
-*.o
-cabal.sandbox.config
-site
