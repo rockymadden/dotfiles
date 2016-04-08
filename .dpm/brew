@@ -29,6 +29,7 @@ gnu-tar
 gnupg
 gnupg2
 go
+gpg-agent
 heroku-toolbelt
 httpie
 hub
@@ -44,6 +45,7 @@ nvm
 openssl
 optipng
 otto
+p7zip
 python
 rbenv
 redis
