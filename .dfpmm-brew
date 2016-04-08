@@ -1,7 +1,8 @@
 ansible
-awscli
+aria2
 asciinema
 asciinema2gif
+awscli
 bats
 bcrypt
 circleci-cli
