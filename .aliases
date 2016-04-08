@@ -50,12 +50,14 @@ alias j='jobs'
 alias l='ls -lF'
 alias la='ls -laF'
 alias ldg='ledger --strict -f'
+alias ll='ls -lhA'
 alias lsg="ls -lF | grep --color=never '^d'"
 alias mirror='wget -mkpnp'
 alias n='notify'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 alias reload="exec ${SHELL} -l"
 alias ssh-as='f() { ssh -i ~/.ssh/"${1}" "${@:2}"; }; f'
+alias ssh-as-forget='f() { ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/"${1}" "${@:2}"; }; f'
 alias ssh-forget='f() { ssh -o UserKnownHostsFile=/dev/null "${1}" "${@:2}"; }; f'
 alias spotlight-off="sudo mdutil -a -i off"
 alias spotlight-on="sudo mdutil -a -i on"
@@ -65,3 +67,6 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 alias week='date +%V'
 alias zsh-upgrade='upgrade_oh_my_zsh'
 alias zsh-stats='zsh_stats'
+
+alias ssh-and-forget='ssh-forget'
+alias ssh-as-and-forget='ssh-as-forget'
