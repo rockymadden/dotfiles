@@ -68,8 +68,10 @@ alias ssh-as-forget='f() { ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/"${1}" 
 alias ssh-forget='f() { ssh -o UserKnownHostsFile=/dev/null "${1}" "${@:2}"; }; f'
 alias spotlight-off="sudo mdutil -a -i off"
 alias spotlight-on="sudo mdutil -a -i on"
+alias tcp='lsof -iTCP -s -n -P'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias title='f() { echo -ne "\e]1;$*\a"; }; f'
+alias udp='lsof -iUDP -s -n -P'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 alias week='date +%V'
 alias zsh-upgrade='upgrade_oh_my_zsh'
