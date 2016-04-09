@@ -36,6 +36,7 @@ hub
 imagemagick
 jq
 ledger
+libressl
 mitmproxy
 moreutils
 multirust
@@ -46,6 +47,7 @@ openssl
 optipng
 otto
 p7zip
+pinentry
 python
 rbenv
 redis
