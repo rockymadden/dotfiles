@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 export EDITOR="nano"
 export HISTFILESIZE=32768
 export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"
@@ -8,10 +8,6 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export GREP_OPTIONS="--color=auto"
 export TERM="xterm-256color"
-
-# Haskell
-export CABALPATH=$HOME/.cabal
-export PATH=$PATH:$CABALPATH/bin
 
 # Go
 export GOPATH=$HOME/.go
