@@ -1,3 +1,8 @@
+# dotfiles: exports
+for file in ~/.{exports,_exports}; do
+  [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
+done; unset file
+
 # zsh
 DEFAULT_USER=rockymadden
 DISABLE_AUTO_TITLE="true"
@@ -15,8 +20,8 @@ plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
-# dotfiles
-for file in ~/.{exports,_exports,aliases,_aliases,functions,_functions,sources,_sources}; do
+# dotfiles: aliases, functions, sources
+for file in ~/.{aliases,_aliases,functions,_functions,sources,_sources}; do
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done; unset file
 
