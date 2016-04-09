@@ -18,7 +18,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 plugins=()
 
-source $ZSH/oh-my-zsh.sh
+source "${ZSH}/oh-my-zsh.sh"
 
 # dotfiles: aliases, functions, sources
 for file in ~/.{aliases,_aliases,functions,_functions,sources,_sources}; do
