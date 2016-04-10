@@ -30,6 +30,7 @@
       "linter-jshint"
       "linter-rust"
       "merge-conflicts"
+      "metrics"
       "minimap-pigments"
       "pigments"
       "racer"
