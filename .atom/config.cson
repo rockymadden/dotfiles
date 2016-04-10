@@ -21,8 +21,19 @@
   "autocomplete-plus": {}
   core:
     disabledPackages: [
-      "hash-n"
-      "base-n"
+      "atom-ternjs"
+      "atomic-chrome"
+      "color-picker"
+      "linter"
+      "linter-csslint"
+      "linter-flow"
+      "linter-jshint"
+      "linter-rust"
+      "merge-conflicts"
+      "minimap-pigments"
+      "pigments"
+      "racer"
+      "regex-railroad-diagram"
       "vim-mode"
     ]
     followSymlinks: true
@@ -41,9 +52,6 @@
     userId: "3693b2ab-2f02-8f93-38ce-d016022c40b1"
   "file-watcher":
     promptWhenFileHasChangedOnDisk: false
-  "git-log":
-    fontFamily: "Source Code Pro"
-    fontScale: 1
   "highlight-selected":
     minimumLength: 2
   linter:
@@ -63,11 +71,8 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
-  "one-dark-ui":
-    layoutMode: "Compact"
-  "one-light-ui":
-    layoutMode: "Compact"
-  react: {}
+      pigments: true
+      pigmentsDecorationsZIndex: 0
   "recent-files":
     updated: false
   "tree-view":
@@ -76,9 +81,3 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-".coffee.jsx.source":
-  editor:
-    preferredLineLength: 100
-".js.jsx.source":
-  editor:
-    preferredLineLength: 100
