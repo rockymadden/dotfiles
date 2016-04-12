@@ -299,36 +299,6 @@ function ssh-forward() {
   esac
 }
 
-function tarbz2() {
-  tar -cjf $1.tar.bz $1
-}
-
-function targz() {
-  local tmpFile="${@%/}.tar"
-  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
-
-  size=$(
-    stat -f"%z" "${tmpFile}" 2> /dev/null
-    stat -c"%s" "${tmpFile}" 2> /dev/null
-  )
-
-  local cmd=""
-  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
-    cmd="zopfli"
-  else
-    if hash pigz 2> /dev/null; then
-      cmd="pigz"
-    else
-      cmd="gzip"
-    fi
-  fi
-
-  echo "Compressing .tar using \`${cmd}\`..."
-  "${cmd}" -v "${tmpFile}" || return 1
-  [ -f "${tmpFile}" ] && rm "${tmpFile}"
-  echo "${tmpFile}.gz created successfully."
-}
-
 function transfer() {
   if [ $# -eq 0 ]; then return 1; fi
 
