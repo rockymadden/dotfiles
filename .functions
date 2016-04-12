@@ -13,16 +13,9 @@ function calc() {
   printf "\n"
 }
 
-function cdf() {
-  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
-}
-
 function codepoint() {
   perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))"
-
-  if [ -t 1 ]; then
-    echo ""
-  fi
+  [ -t 1 ] && echo ''
 }
 
 function curl() {
@@ -63,92 +56,6 @@ function dataurl() {
   fi
 
   echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')"
-}
-
-function digga() {
-  dig +nocmd "$1" any +multiline +noall +answer
-}
-
-function docker() {
-  case "$1" in
-    bash)
-      command docker exec -it "${2}" bash
-    ;;
-
-    daemonize)
-      command docker run -d -P "${@:2}"
-    ;;
-
-    flatten)
-      command docker export $(command docker run -d "${2}" /bin/bash) | command docker import - "${3}"
-    ;;
-
-    interact)
-      command docker run -i -t -P "${@:2}"
-    ;;
-
-    ip)
-      command docker inspect -f '{{.NetworkSettings.IPAddress}}' "${2}"
-    ;;
-
-    mac)
-      command docker inspect -f '{{.NetworkSettings.MacAddress}}' "${2}"
-    ;;
-
-    ports)
-      command docker inspect -f '{{range $p, $conf := .NetworkSettings.Ports}} {{$p}} -> {{(index $conf 0).HostPort}} {{end}}' "${2}"
-    ;;
-
-    rmall)
-      ps=$(command docker ps -a -q)
-      [ -n "$ps" ] && docker stopall && command docker rm "${@:2}" $ps
-    ;;
-
-    rmstopped)
-      ps=$(command docker ps -a -q -f 'status=exited')
-      [ -n "$ps" ] && command docker rm "${@:2}" $ps
-    ;;
-
-    rmiall)
-      images=$(command docker images -q)
-      [ -n "$images" ] && docker stopall && docker rmall && command docker rmi "${@:2}" $images
-    ;;
-
-    rmidangling)
-      images=$(command docker images -q -f 'dangling=true')
-      [ -n "$images" ] && command docker rmi "${@:2}" $images
-    ;;
-
-    statsall)
-      command docker stats "${@:2}" $(command docker ps -q)
-    ;;
-
-    stopall)
-      ps=$(command docker ps -a -q)
-      [ -n "$ps" ] && command docker stop "${@:2}" $ps
-    ;;
-
-    volumes)
-      command docker inspect -f '{{$conf := .Mounts}} {{(index $conf 0).Destination}} -> {{(index $conf 0).Source}}' "${2}"
-    ;;
-
-    --binwrap)
-      echo 'Usage:'
-      echo '  docker {rmall|rmstopped|rmiall|rmidangling|statsall|stopall}'
-      echo '  docker bash <container>'
-      echo '  docker daemonize <image> <command>'
-      echo '  docker flatten <image> <new image>'
-      echo '  docker interact <image> <command>'
-      echo '  docker ip <container>'
-      echo '  docker mac <container>'
-      echo '  docker ports <container>'
-      echo '  docker volumes <container>'
-    ;;
-
-    *)
-      command docker "${@:1}"
-    ;;
-  esac
 }
 
 # dotfile package manager
@@ -292,41 +199,24 @@ function dpm() {
 
 function escape() {
   printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
-
-  if [ -t 1 ]; then
-    echo ""
-  fi
+  [ -t 1 ] && echo ''
 }
 
 function extract() {
-  if [ -f "$1" ]; then
-    case "$1" in
-      *.tar.bz2) tar xjf "$1" ;;
-      *.tar.gz) tar xzf "$1" ;;
-      *.gz) gunzip "$1" ;;
-      *.tar) tar xf "$1" ;;
-      *.tbz2) tar xjf "$1" ;;
-      *.tgz) tar xzf "$1" ;;
-      *.zip) 7z x "$1" ;;
-      *.7z) 7z x "$1" ;;
-      *) return 1 ;;
-    esac
-  else
-    return 1
-  fi
-}
+  [ ! -f "$1" ] && return 1
 
-function fs() {
-  if du -b /dev/null > /dev/null 2>&1; then
-    local arg=-sbh
-  else
-    local arg=-sh
-  fi
-  if [[ -n "$@" ]]; then
-    du $arg -- "$@"
-  else
-    du $arg .[^.]* *
-  fi
+  case "$1" in
+    *.tar.bz2) tar xjf "$1" ;;
+    *.tar.gz) tar xzf "$1" ;;
+    *.tar.xz) tar xJf "$1" ;;
+    *.gz) gunzip "$1" ;;
+    *.tar) tar xf "$1" ;;
+    *.tbz2) tar xjf "$1" ;;
+    *.tgz) tar xzf "$1" ;;
+    *.zip) 7z x "$1" ;;
+    *.7z) 7z x "$1" ;;
+    *) return 1 ;;
+  esac
 }
 
 function md5() {
@@ -347,37 +237,6 @@ function sha256() {
 
 function sha512() {
   openssl dgst -sha512 "${1}" | cut -d' ' -f2
-}
-
-function slack() {
-  case "${1}" in
-    collaborator)
-      local url=$(git browse -u)
-      local repo=$(git browse -u | sed -e 's|https://github.com/||g')
-
-      command slack send "*Collaborator state change:* ${2}" \
-        --author="${repo}" \
-        --author-icon='https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
-        --author-link="${url}" \
-        --channel="${3}" \
-        --color=good
-    ;;
-
-    pull-request)
-      local url=$(git browse -u)
-      local repo=$(git browse -u | sed -e 's|https://github.com/||g')
-      local desc=$(git issue | grep "${2}" | cut -d ']' -f2)
-
-      command slack send "*Pull request merged into master:* ${desc}" \
-        --author="${repo}" \
-        --author-icon='https://assets-cdn.github.com/images/modules/logos_page/Octocat.png' \
-        --author-link="${url}" \
-        --channel="${3}" \
-        --color=good
-    ;;
-
-    *) command slack "${@:1}" ;;
-  esac
 }
 
 function socat() {
@@ -433,57 +292,22 @@ function ssh-forward() {
   esac
 }
 
-function tarbz2() {
-  tar -cjf $1.tar.bz $1
-}
+function transfer() {
+  [ $# -eq 0 ] && return 1
 
-function targz() {
-  local tmpFile="${@%/}.tar"
-  tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1
+  f=$1
+  tf=$(mktemp -t transferXXX)
 
-  size=$(
-    stat -f"%z" "${tmpFile}" 2> /dev/null
-    stat -c"%s" "${tmpFile}" 2> /dev/null
-  )
+  if tty -s; then
+    [ ! -e $f ] && return 1
 
-  local cmd=""
-  if (( size < 52428800 )) && hash zopfli 2> /dev/null; then
-    cmd="zopfli"
+    bf=$(basename "$f" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
+    curl --progress-bar --upload-file "$f" "https://transfer.sh/$bf" >> $tf
   else
-    if hash pigz 2> /dev/null; then
-      cmd="pigz"
-    else
-      cmd="gzip"
-    fi
+    curl --progress-bar --upload-file "-" "https://transfer.sh/$f" >> $tf
   fi
 
-  echo "Compressing .tar using \`${cmd}\`..."
-  "${cmd}" -v "${tmpFile}" || return 1
-  [ -f "${tmpFile}" ] && rm "${tmpFile}"
-  echo "${tmpFile}.gz created successfully."
-}
-
-function unidecode() {
-  perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
-
-  if [ -t 1 ]; then
-    echo ""
-  fi
-}
-
-function vegeta() {
-  case "$1" in
-    GET)
-      echo "GET ${2}" | vegeta attack -duration="${3}" -rate="${4}" | tee /tmp/vegeta.bin | vegeta report
-    ;;
-
-    --binwrap)
-      echo 'Usage:'
-      echo '  vegeta GET <url>'
-    ;;
-
-    *)
-      command vegeta "${@:1}"
-    ;;
-  esac
+  cat $tf
+  cat $tf | tr -d '\n' | pbcopy
+  rm -f $tf
 }
