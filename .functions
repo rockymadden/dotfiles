@@ -463,6 +463,26 @@ function targz() {
   echo "${tmpFile}.gz created successfully."
 }
 
+function transfer() {
+  if [ $# -eq 0 ]; then return 1; fi
+
+  f=$1
+  tf=$(mktemp -t transferXXX)
+
+  if tty -s; then
+    if [ ! -e $f ]; then return 1; fi
+
+    bf=$(basename "$f" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
+    curl --progress-bar --upload-file "$f" "https://transfer.sh/$bf" >> $tf
+  else
+    curl --progress-bar --upload-file "-" "https://transfer.sh/$f" >> $tf
+  fi
+
+  cat $tf
+  cat $tf | pbcopy
+  rm -f $tf
+}
+
 function unidecode() {
   perl -e "binmode(STDOUT, ':utf8'); print \"$@\""
 
