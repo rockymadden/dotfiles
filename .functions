@@ -15,10 +15,7 @@ function calc() {
 
 function codepoint() {
   perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))"
-
-  if [ -t 1 ]; then
-    echo ""
-  fi
+  [ -t 1 ] && echo ''
 }
 
 function curl() {
@@ -202,14 +199,11 @@ function dpm() {
 
 function escape() {
   printf "\\\x%s" $(printf "$@" | xxd -p -c1 -u)
-
-  if [ -t 1 ]; then
-    echo ""
-  fi
+  [ -t 1 ] && echo ''
 }
 
 function extract() {
-  if [ ! -f "$1" ]; then return 1; fi
+  [ ! -f "$1" ] && return 1
 
   case "$1" in
     *.tar.bz2) tar xjf "$1" ;;
@@ -299,13 +293,13 @@ function ssh-forward() {
 }
 
 function transfer() {
-  if [ $# -eq 0 ]; then return 1; fi
+  [ $# -eq 0 ] && return 1
 
   f=$1
   tf=$(mktemp -t transferXXX)
 
   if tty -s; then
-    if [ ! -e $f ]; then return 1; fi
+    [ ! -e $f ] && return 1
 
     bf=$(basename "$f" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
     curl --progress-bar --upload-file "$f" "https://transfer.sh/$bf" >> $tf
@@ -314,6 +308,6 @@ function transfer() {
   fi
 
   cat $tf
-  cat $tf | pbcopy
+  cat $tf | tr -d '\n' | pbcopy
   rm -f $tf
 }
