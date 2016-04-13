@@ -63,6 +63,7 @@ alias lsg='f() { ls -lhA | grep "$*"; }; f'
 alias mirror='wget -mkpnp'
 alias n='notify'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+alias p='parallel'
 alias ps='ps aux'
 alias psg='f() { command ps aux | grep -v grep | grep -i -e VSZ -e "$*"; }; f'
 alias reload="exec $SHELL -l"
