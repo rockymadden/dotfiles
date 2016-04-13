@@ -39,6 +39,7 @@ ledger
 libressl
 mitmproxy
 moreutils
+mosh
 multirust
 nmap
 nomad
