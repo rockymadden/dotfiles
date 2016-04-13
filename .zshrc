@@ -3,7 +3,7 @@ for file in ~/.{exports,_exports}; do
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done; unset file
 
-plugins=()
+plugins=(autojump)
 
 source "${ZSH}/oh-my-zsh.sh"
 
