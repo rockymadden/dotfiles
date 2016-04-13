@@ -59,6 +59,7 @@ ruby
 s3cmd
 slack-cli
 socat
+spark
 ssh-copy-id
 terminal-notifier
 terraform
