@@ -22,7 +22,7 @@ export GPG_TTY=$(tty)
 
 # ZSH
 export DEFAULT_USER=rockymadden
-export DISABLE_AUTO_TITLE="true"
+export DISABLE_AUTO_TITLE="false"
 export DISABLE_AUTO_UPDATE="true"
 export HIST_STAMPS="yyyy-mm-dd"
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
