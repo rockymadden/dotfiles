@@ -55,6 +55,7 @@ rbenv
 redis
 rfc
 ruby
+s3cmd
 slack-cli
 socat
 ssh-copy-id
