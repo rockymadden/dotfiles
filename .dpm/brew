@@ -60,6 +60,7 @@ socat
 ssh-copy-id
 terminal-notifier
 terraform
+the_silver_searcher
 vault
 vim
 watchman
