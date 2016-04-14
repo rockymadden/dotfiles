@@ -10,7 +10,7 @@ export GREP_OPTIONS="--color=auto"
 export TERM="xterm-256color"
 
 # Go
-export GOPATH=$HOME/.go
+export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
 
 # Javascript
