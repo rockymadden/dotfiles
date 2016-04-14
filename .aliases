@@ -62,16 +62,17 @@ alias lsg='f() { ls -lhA | grep "$*"; }; f'
 alias mirror='wget -mkpnp'
 alias n='notify'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
-alias p='parallel'
 alias ps='ps aux'
 alias psg='f() { command ps aux | grep -v grep | grep -i -e VSZ -e "$*"; }; f'
 alias reload="exec $SHELL -l"
 alias scp-as='f() { scp -i ~/.ssh/"$1" "${@:2}"; }; f'
-alias scp-as-forget='f() { scp -o UserKnownHostsFile=/dev/null -i ~/.ssh/"$1" "${@:2}"; }; f'
 alias scp-forget='f() { scp -o UserKnownHostsFile=/dev/null "$1" "${@:2}"; }; f'
+alias scp-forget-as='f() { scp -o UserKnownHostsFile=/dev/null -i ~/.ssh/"$1" "${@:2}"; }; f'
 alias ssh-as='f() { ssh -i ~/.ssh/"$1" "${@:2}"; }; f'
-alias ssh-as-forget='f() { ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/"$1" "${@:2}"; }; f'
 alias ssh-forget='f() { ssh -o UserKnownHostsFile=/dev/null "$1" "${@:2}"; }; f'
+alias ssh-forget-as='f() { ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/"$1" "${@:2}"; }; f'
+alias ssh-forward='f() { ssh -N -L "${1}:localhost:${1}" "${@:2}"; }; f'
+alias ssh-forward-as='f() { ssh -i ~/.ssh/"$1" -N -L "${2}:localhost:${2}" "${@:3}"; }; f'
 alias spotlight-off="sudo mdutil -a -i off"
 alias spotlight-on="sudo mdutil -a -i on"
 alias tarbz2='f() { tar -cjf "$1.tar.bz" "$1"; }; f'

@@ -270,28 +270,6 @@ function socat() {
   esac
 }
 
-function ssh-forward() {
-  test "$#" -lt 1 && return 1
-
-  a=(${1//:/ })
-
-  case "$#" in
-    2)
-      lp=${2}
-      rp=${a[1]}
-    ;;
-    1)
-      lp=${a[1]}
-      rp=${a[1]}
-    ;;
-  esac
-
-  case "${a[0]}" in
-    *@*) ssh -N -L ${lp}:localhost:${rp} -l ${a[0]/@/ } ;;
-    *) ssh -N -L ${lp}:localhost:${rp} -l $(whoami) ${a[0]} ;;
-  esac
-}
-
 function transfer() {
   [ $# -eq 0 ] && return 1
 
