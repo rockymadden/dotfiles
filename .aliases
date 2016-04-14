@@ -71,7 +71,7 @@ alias scp-forget-as='f() { scp -o UserKnownHostsFile=/dev/null -i ~/.ssh/"$1" "$
 alias ssh-as='f() { ssh -i ~/.ssh/"$1" "${@:2}"; }; f'
 alias ssh-forget='f() { ssh -o UserKnownHostsFile=/dev/null "$1" "${@:2}"; }; f'
 alias ssh-forget-as='f() { ssh -o UserKnownHostsFile=/dev/null -i ~/.ssh/"$1" "${@:2}"; }; f'
-alias ssh-forward='f() { ssh -N -L "$1:localhost:$1" "${@:2}"; }; f'
+alias ssh-forward='f() { ssh -N -L "${1}:localhost:${1}" "${@:2}"; }; f'
 alias ssh-forward-as='f() { ssh -i ~/.ssh/"$1" -N -L "${2}:localhost:${2}" "${@:3}"; }; f'
 alias spotlight-off="sudo mdutil -a -i off"
 alias spotlight-on="sudo mdutil -a -i on"
