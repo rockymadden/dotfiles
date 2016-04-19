@@ -10,6 +10,7 @@ circleci-cli
 consul
 coreutils
 curl
+dark-mode
 docker
 docker-compose
 docker-machine
