@@ -43,6 +43,7 @@ moreutils
 mosh
 mtr
 multirust
+netcat
 nmap
 node
 nvm
