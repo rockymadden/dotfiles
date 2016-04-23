@@ -56,6 +56,7 @@ python
 python3
 rbenv
 redis
+resty
 rfc
 ruby
 s3cmd
