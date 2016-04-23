@@ -86,6 +86,7 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias title='f() { echo -ne "\e]1;$*\a"; }; f'
 alias udp='lsof -iUDP -s -n -P'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+alias weather='wego'
 alias week='date +%V'
 alias zsh-upgrade='upgrade_oh_my_zsh'
 alias zsh-stats='zsh_stats'
