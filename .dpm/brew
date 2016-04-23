@@ -61,6 +61,7 @@ s3cmd
 slack-cli
 socat
 somafm-cli
+spark
 ssh-copy-id
 terminal-notifier
 the_silver_searcher
