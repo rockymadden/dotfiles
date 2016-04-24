@@ -9,6 +9,7 @@ bats
 bcrypt
 brew-gem
 brew-pip
+chrome-cli
 circleci-cli
 coreutils
 curl
