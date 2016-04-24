@@ -59,8 +59,8 @@ patchutils
 p7zip
 pinentry
 pstree
+pyenv
 python
-python3
 rbenv
 redis
 resty
