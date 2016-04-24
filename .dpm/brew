@@ -7,6 +7,8 @@ autojump
 awscli
 bats
 bcrypt
+brew-gem
+brew-pip
 circleci-cli
 coreutils
 curl
