@@ -55,6 +55,7 @@ node
 nvm
 openssl
 optipng
+patchutils
 p7zip
 pinentry
 pstree
