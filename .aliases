@@ -10,6 +10,7 @@ alias -- -='cd -'
 alias a='atom'
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias aliases='grep alias < ~/.aliases | cut -c 7- | sort'
+alias chome='chrome-cli'
 alias ci='circleci'
 alias cib='circleci browse'
 alias cin='circleci notify'
@@ -62,6 +63,7 @@ unalias lsa # zsh
 alias lsg='f() { ls -lhA | grep "$*"; }; f'
 alias mirror='wget -mkpnp'
 alias n='notify'
+alias network-scan='arp-scan --interface=en0 --localnet'
 alias openwith-cleanup="/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
 alias ps='ps aux'
 alias psg='f() { command ps aux | grep -v grep | grep -i -e VSZ -e "$*"; }; f'
