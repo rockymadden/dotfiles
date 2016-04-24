@@ -13,12 +13,13 @@ chrome-cli
 circleci-cli
 coreutils
 curl
-dark-mode
 docker
 docker-cloud
 docker-compose
 docker-machine
 docker-swarm
+dark-mode
+dateutils
 elixir
 erlang
 exiftool
