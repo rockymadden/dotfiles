@@ -61,31 +61,9 @@ function dataurl() {
 # dotfile package manager
 function dpm() {
   case "${1}" in
-    init)
-      case "${2}" in
-        apms|apm-packages|atom-packages) mkdir -p ~/.atom/packages ;;
-
-        brews|brew-forumulas|brew-packages)
-          brew tap homebrew/dupes
-          brew tap homebrew/science
-          brew tap rockymadden/rockymadden
-        ;;
-
-        casks|brew-cask-formulas|brew-cask-packages)
-          brew tap caskroom/cask
-        ;;
-
-        gems|ruby-packages) return 0 ;;
-
-        npms|node-packages) return 0 ;;
-
-        pips|python-packages) return 0 ;;
-      esac
-    ;;
-
     install)
       case "${2}" in
-        apms|apm-packages|atom-packages)
+        apm)
           local p=$(<~/.dpm/apm)
           local d=$(comm -13 <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort) <(echo "${p}" | sort))
 
@@ -96,7 +74,7 @@ function dpm() {
           esac
         ;;
 
-        brews|brew-forumulas|brew-packages)
+        brew)
           local p=$(<~/.dpm/brew)
           local d=$(comm -13 <(brew list -1 | sed 's|rockymadden/rockymadden/||' | sort) <(echo "${p}" | sort))
 
@@ -107,7 +85,7 @@ function dpm() {
           esac
         ;;
 
-        casks|brew-cask-formulas|brew-cask-packages)
+        brew-cask)
           local p=$(<~/.dpm/brew-cask)
           local d=$(comm -13 <(brew cask list -1 | sort) <(echo "${p}" | sort))
 
@@ -118,7 +96,7 @@ function dpm() {
           esac
         ;;
 
-        gems|ruby-packages)
+        gem)
           local p=$(<~/.dpm/gem)
 
           test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
@@ -128,7 +106,7 @@ function dpm() {
           esac
         ;;
 
-        npms|node-packages)
+        npm)
           local p=$(<~/.dpm/npm)
 
           test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
@@ -138,7 +116,7 @@ function dpm() {
           esac
         ;;
 
-        pips|python-packages)
+        pip)
           local p=$(<~/.dpm/pip)
 
           test -n "${p}" && read -p "Proceed with installing (y/n)? Packages: $(echo "${p}" | tr '\n' ' ')" proceed
@@ -152,7 +130,7 @@ function dpm() {
 
     uninstall)
       case "${2}" in
-        apms|apm-packages|atom-packages)
+        apm)
           local p=$(<~/.dpm/apm)
           local d=$(comm -13 <(echo "${p}" | sort) <(apm list --bare --installed | ghead -n -1 | cut -f1 -d'@' | sort))
 
@@ -163,7 +141,7 @@ function dpm() {
           esac
         ;;
 
-        brews|brew-forumulas|brew-packages)
+        brew)
           local p=$(<~/.dpm/brew)
           local d=$(comm -13 <(echo "${p}" | sort) <(brew leaves | sed 's|rockymadden/rockymadden/||' | sort))
 
@@ -174,7 +152,7 @@ function dpm() {
           esac
         ;;
 
-        casks|brew-cask-formulas|brew-cask-packages)
+        brew-cask)
           local p=$(<~/.dpm/brew-cask)
           local d=$(comm -13 <(echo "${p}" | sort) <(brew cask list -1 | sort))
 
@@ -185,15 +163,15 @@ function dpm() {
           esac
         ;;
 
-        gems|ruby-packages) return 0 ;;
+        gem) return 0 ;;
 
-        npms|node-packages) return 0 ;;
+        npm) return 0 ;;
 
-        pips|python-packages) return 0 ;;
+        pip) return 0 ;;
       esac
     ;;
 
-    *) echo 'Command not found' ; return 1 ;;
+    *) echo 'Command not found'; return 1 ;;
   esac
 }
 
