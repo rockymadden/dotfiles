@@ -7,8 +7,6 @@ autojump
 awscli
 bats
 bcrypt
-brew-gem
-brew-pip
 chrome-cli
 circleci-cli
 coreutils
@@ -51,8 +49,7 @@ mtr
 multirust
 netcat
 nmap
-node
-nvm
+nodenv
 openssl
 optipng
 patchutils
@@ -60,12 +57,10 @@ p7zip
 pinentry
 pstree
 pyenv
-python
 rbenv
 redis
 resty
 rfc
-ruby
 s3cmd
 slack-cli
 socat
