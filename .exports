@@ -13,9 +13,11 @@ export TERM="xterm-256color"
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
 
-# Javascript
+# Node
 export NODE_ENV=development
-export NVM_DIR=~/.nvm
+
+# Ruby
+export RUBYOPT='-W0'
 
 # GPG
 export GPG_TTY=$(tty)

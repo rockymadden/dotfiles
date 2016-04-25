@@ -1,1 +1,3 @@
-source "$(brew --prefix nvm)/nvm.sh"
+eval "$(nodenv init -)"
+eval "$(rbenv init -)"
+eval "$(pyenv init -)"
