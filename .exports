@@ -9,6 +9,9 @@ export LC_ALL="en_US.UTF-8"
 export GREP_OPTIONS="--color=auto"
 export TERM="xterm-256color"
 
+# Homebrew
+export HOMEBREW_NO_ANALYTICS=1
+
 # Go
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
