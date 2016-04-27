@@ -27,6 +27,7 @@ flow
 fswatch
 gcc
 git
+gitfs
 git-lfs
 git-extras
 gnu-sed
@@ -66,6 +67,7 @@ slack-cli
 socat
 somafm-cli
 spark
+sshfs
 ssh-copy-id
 sysdig
 terminal-notifier
