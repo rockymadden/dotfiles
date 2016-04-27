@@ -62,6 +62,7 @@ rbenv
 redis
 resty
 rfc
+saltstack
 s3cmd
 slack-cli
 socat
