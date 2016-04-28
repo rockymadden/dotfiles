@@ -35,6 +35,7 @@ gnupg2
 go
 gpg-agent
 heroku-toolbelt
+htop
 httpie
 hub
 jq
