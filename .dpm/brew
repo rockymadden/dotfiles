@@ -70,7 +70,6 @@ ssh-copy-id
 sysdig
 terminal-notifier
 the_silver_searcher
-vault
 vim
 watchman
 websocketd
