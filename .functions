@@ -258,7 +258,15 @@ function transfer() {
     [ ! -e $f ] && return 1
 
     bf=$(basename "$f" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
-    curl --progress-bar --upload-file "$f" "https://transfer.sh/$bf" >> $tf
+
+    if [ -d $file ]; then
+      tarfile=$(mktemp -t transferXXX.tar.gz)
+      (cd $(dirname $f); tar -zcf "$tarfile" "$(basename $f)")
+      curl --progress-bar --upload-file "$tarfile" "https://transfer.sh/$bf.tar.gz" >> $tf
+      rm -f "$tarfile"
+    else
+      curl --progress-bar --upload-file "$f" "https://transfer.sh/$bf" >> $tf
+    fi
   else
     curl --progress-bar --upload-file "-" "https://transfer.sh/$f" >> $tf
   fi
