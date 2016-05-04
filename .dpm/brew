@@ -52,6 +52,7 @@ nmap
 nodenv
 openssl
 optipng
+packer
 patchutils
 p7zip
 pinentry
