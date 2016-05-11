@@ -16,6 +16,7 @@ language-elixir
 language-erlang
 language-haml
 language-haskell
+language-hcl
 language-jade
 language-julia
 language-latex
