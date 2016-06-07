@@ -1,8 +1,8 @@
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 export EDITOR="nano"
-export HISTFILESIZE=32768
+export HISTFILESIZE=2048
 export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"
-export HISTSIZE=32768
+export HISTSIZE=2048
 export HISTCONTROL=ignoreboth
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
