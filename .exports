@@ -1,5 +1,5 @@
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
-export EDITOR="nano"
+export EDITOR="vim"
 export HISTFILESIZE=2048
 export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"
 export HISTSIZE=2048
