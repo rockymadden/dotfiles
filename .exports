@@ -3,6 +3,7 @@ export EDITOR="vim"
 export HISTFILESIZE=2048
 export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"
 export HISTSIZE=2048
+export SAVEHIST=2048
 export HISTCONTROL=ignoreboth
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
