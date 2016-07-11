@@ -1,9 +1,9 @@
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 export EDITOR="vim"
-export HISTFILESIZE=2048
+export HISTFILESIZE=4096
 export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"
-export HISTSIZE=2048
-export SAVEHIST=2048
+export HISTSIZE=4096
+export SAVEHIST=4096
 export HISTCONTROL=ignoreboth
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
