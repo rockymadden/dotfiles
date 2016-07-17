@@ -247,31 +247,3 @@ function socat() {
     *) command socat "${@:1}" ;;
   esac
 }
-
-function transfer() {
-  [ $# -eq 0 ] && return 1
-
-  f=$1
-  tf=$(mktemp -t transferXXX)
-
-  if tty -s; then
-    [ ! -e $f ] && return 1
-
-    bf=$(basename "$f" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
-
-    if [ -d $f ]; then
-      tarfile=$(mktemp -t transferXXX.tar.gz)
-      (cd $(dirname $f); tar -zcf "$tarfile" "$(basename $f)")
-      curl --progress-bar --upload-file "$tarfile" "https://transfer.sh/$bf.tar.gz" >> $tf
-      rm -f "$tarfile"
-    else
-      curl --progress-bar --upload-file "$f" "https://transfer.sh/$bf" >> $tf
-    fi
-  else
-    curl --progress-bar --upload-file "-" "https://transfer.sh/$f" >> $tf
-  fi
-
-  cat $tf
-  cat $tf | tr -d '\n' | pbcopy
-  rm -f $tf
-}
