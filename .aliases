@@ -23,8 +23,6 @@ alias dls='cd ~/Downloads'
 alias dns-flush="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias download='aria2c'
 alias dsstore-cleanup="f() { find ${1-.} -type f -name '*.DS_Store' -ls -delete; }; f"
-alias encrypt-asymmetric-transfer='gpg -ae -o - | transfer'
-alias encrypt-symmetric-transfer='gpg -ac -o - | transfer'
 alias g='git'
 alias gcm='git cm'
 alias gco='git co'
@@ -56,11 +54,11 @@ alias ip-wan="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ip-lan="ipconfig getifaddr en0"
 alias ip-all="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 alias iso8601='date -u +"%Y-%m-%dT%H:%M:%SZ"'
-unalias l # zsh
+unalias l
 alias la='ls -lAF'
 alias ldg='ledger --strict -f'
 alias ll='ls -lhA'
-unalias lsa # zsh
+unalias lsa
 alias lsg='f() { ls -lhA | grep "$*"; }; f'
 alias mirror='wget -mkpnp'
 alias n='notify'
@@ -99,14 +97,11 @@ alias zsh-stats='zsh_stats'
 
 alias adecrypt='gpg-decrypt-asymmetric'
 alias aencrypt='gpg-encrypt-asymmetric'
-alias aenctrans='encrypt-asymmetric-transfer'
 alias decrypt-asymmetric='gpg-decrypt-asymmetric'
 alias decrypt-symmetric='gpg-decrypt-symmetric'
 alias dl='download'
 alias encrypt-asymmetric='gpg-encrypt-asymmetric'
 alias encrypt-symmetric='gpg-encrypt-symmetric'
-alias senctrans='encrypt-transfer'
 alias sdecrypt='gpg-decrypt-symmetric'
 alias sencrypt='gpg-encrypt-symmetric'
-alias senctrans='encrypt-symmetric-transfer'
 alias trans='transfer'
