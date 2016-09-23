@@ -5,16 +5,9 @@ autojump
 awscli
 bats
 bcrypt
-chrome-cli
 circleci-cli
 coreutils
 curl
-docker
-docker-cloud
-docker-compose
-docker-machine
-docker-swarm
-dark-mode
 dateutils
 elixir
 erlang
