@@ -24,6 +24,8 @@
       "atom-ternjs"
       "atomic-chrome"
       "color-picker"
+      "file-icons"
+      "hex"
       "linter"
       "linter-csslint"
       "linter-flow"

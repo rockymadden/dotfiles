@@ -5,16 +5,9 @@ autojump
 awscli
 bats
 bcrypt
-chrome-cli
 circleci-cli
 coreutils
 curl
-docker
-docker-cloud
-docker-compose
-docker-machine
-docker-swarm
-dark-mode
 dateutils
 elixir
 erlang
@@ -65,7 +58,6 @@ s3cmd
 slack-cli
 socat
 somafm-cli
-spark
 sshfs
 ssh-copy-id
 sysdig
@@ -76,6 +68,4 @@ vim
 watchman
 websocketd
 wget
-yank
-zenhub-cli
 zsh
