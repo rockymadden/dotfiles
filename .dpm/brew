@@ -58,7 +58,6 @@ s3cmd
 slack-cli
 socat
 somafm-cli
-spark
 sshfs
 ssh-copy-id
 sysdig
