@@ -39,9 +39,11 @@ moreutils
 mosh
 mtr
 multirust
+nanomsg
 netcat
 nmap
 nodenv
+nomad
 openssl
 optipng
 packer
@@ -68,4 +70,5 @@ vim
 watchman
 websocketd
 wget
+zeromq
 zsh
