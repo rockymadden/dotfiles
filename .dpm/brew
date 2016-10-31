@@ -29,6 +29,7 @@ go
 gpg-agent
 htop
 httpie
+httpstat
 hub
 jq
 ledger
