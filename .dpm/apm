@@ -26,9 +26,7 @@ language-rust
 language-scala
 language-swift
 linter
-linter-csslint
-linter-jshint
-linter-rust
+linter-eslint
 markdown-pdf
 merge-conflicts
 minimap
