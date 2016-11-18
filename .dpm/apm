@@ -1,9 +1,7 @@
 atom-material-syntax
 atom-material-syntax-light
 atom-material-ui
-atom-ternjs
 autocomplete-paths
-color-picker
 file-icons
 hex
 highlight-line
@@ -36,7 +34,6 @@ minimap-highlight-selected
 minimap-pigments
 pigments
 pretty-json
-racer
 regex-railroad-diagram
 trailing-spaces
 vim-mode
