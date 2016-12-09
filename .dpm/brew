@@ -42,6 +42,7 @@ moreutils
 mosh
 mtr
 multirust
+mycli
 nanomsg
 netcat
 nmap

@@ -1,3 +1,4 @@
+bunyan
 hasha-cli
 is-up-cli
 fast-cli
@@ -7,5 +8,6 @@ npm
 pageres-cli
 replem
 sparkly-cli
+tap
 tldr
 trash-cli
