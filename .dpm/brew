@@ -53,6 +53,7 @@ optipng
 packer
 patchutils
 p7zip
+pgcli
 pinentry
 pstree
 pyenv
