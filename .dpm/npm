@@ -1,11 +1,14 @@
+ava
 bunyan
 hasha-cli
 is-up-cli
 fast-cli
 fkill-cli
+node-notifier
 now
 npm
 pageres-cli
+release
 replem
 semver
 serve
@@ -13,3 +16,4 @@ sparkly-cli
 tap
 tldr
 trash-cli
+xo
