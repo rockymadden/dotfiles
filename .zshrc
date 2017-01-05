@@ -12,6 +12,9 @@ for file in ~/.{exports,_exports,aliases,_aliases,functions,_functions,sources,_
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done; unset file
 
+# ssh-agent
+ssh-add -A 2>/dev/null
+
 # gpg-agent
 [ -f ~/.gnupg/.gpg-agent-info ] && source ~/.gnupg/.gpg-agent-info
 if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
