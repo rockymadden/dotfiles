@@ -25,6 +25,7 @@ language-scala
 language-swift
 linter
 linter-eslint
+linter-xo
 markdown-pdf
 merge-conflicts
 minimap
