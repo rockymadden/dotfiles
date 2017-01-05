@@ -13,7 +13,7 @@ for file in ~/.{exports,_exports,aliases,_aliases,functions,_functions,sources,_
 done; unset file
 
 # ssh-agent
-ssh-add -A 2>/dev/null
+ssh-add -l | grep -q '.ssh/id_rsa' || ssh-add -A 2>/dev/null
 
 # gpg-agent
 [ -f ~/.gnupg/.gpg-agent-info ] && source ~/.gnupg/.gpg-agent-info
