@@ -38,7 +38,6 @@ ledger
 libressl
 lua
 mitmproxy
-moreutils
 mosh
 mtr
 multirust
@@ -51,6 +50,7 @@ nomad
 openssl
 optipng
 packer
+parallel
 patchutils
 p7zip
 pgcli
