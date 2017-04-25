@@ -16,14 +16,16 @@
   core:
     disabledPackages: [
       "atomic-chrome"
-      "file-icons"
+      "deprecation-cop"
       "hex"
+      "linter-eslint"
       "merge-conflicts"
       "metrics"
       "minimap-pigments"
       "pigments"
       "regex-railroad-diagram"
       "vim-mode"
+      "whitespace"
     ]
     followSymlinks: true
     telemetryConsent: "no"
@@ -33,9 +35,8 @@
     ]
   editor:
     fontFamily: "Source Code Pro"
-    fontSize: 13
     invisibles: {}
-    preferredLineLength: 100
+    preferredLineLength: 120
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
@@ -44,8 +45,8 @@
     promptWhenFileHasChangedOnDisk: true
   "highlight-selected":
     minimumLength: 2
-  linter:
-    showErrorTabLine: true
+  linter: {}
+  "linter-ui-default": {}
   minimap:
     autoToggle: true
     plugins:
