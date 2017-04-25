@@ -10,6 +10,7 @@ alias -- -='cd -'
 alias a='atom'
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias aliases='grep alias < ~/.aliases | cut -c 7- | sort'
+alias await='f() { sh -c "until ${1}; do sleep ${2-10}; done"; }; f'
 alias chome='chrome-cli'
 alias ci='circleci'
 alias cib='circleci browse'
