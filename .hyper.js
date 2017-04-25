@@ -42,7 +42,6 @@ module.exports = {
     copyOnSelect: false
   },
   plugins: [
-    'hyperline',
     'hyperlinks',
     'hyperterm-dibdabs',
     'hyperterm-material',

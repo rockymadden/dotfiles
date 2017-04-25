@@ -2,7 +2,7 @@ atom-material-syntax
 atom-material-syntax-light
 atom-material-ui
 autocomplete-paths
-file-icons
+editorconfig
 hex
 highlight-line
 highlight-selected
@@ -25,8 +25,8 @@ language-scala
 language-swift
 linter
 linter-eslint
+linter-ui-default
 linter-xo
-markdown-pdf
 merge-conflicts
 minimap
 minimap-find-and-replace
@@ -36,5 +36,4 @@ minimap-pigments
 pigments
 pretty-json
 regex-railroad-diagram
-trailing-spaces
 vim-mode
