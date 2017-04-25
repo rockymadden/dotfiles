@@ -2,37 +2,60 @@ module.exports = {
   config: {
     fontSize: 14,
     fontFamily: '"SourceCodePro+Powerline+Awesome Regular", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
-    cursorColor: 'rgba(255, 255, 255, 0.2)',
+    cursorColor: 'rgba(255, 255, 255, 0.5)',
     cursorShape: 'BEAM',
     cursorBlink: true,
-    foregroundColor: '#fff',
-    backgroundColor: '#000',
-    borderColor: '#333',
-    css: '',
+    foregroundColor: '#eceff1',
+    backgroundColor: '#263238',
+    borderColor: '#222d32',
+    css: `
+      .hyper_main {
+        border: none !important;
+      }
+      .header_header {
+        background: #222d32 !important;
+      }
+      .tab_tab {
+        border: 0;
+      }
+      .tab_textActive {
+        border-bottom: 2px solid #2b98f0;
+      }
+      .splitpane_divider {
+        background-color: rgba(170, 187, 195, 0.16) !important;
+      }
+    `,
     termCSS: `
       x-row > span {
         line-height: 1.4em;
       }
+      x-screen a {
+        color: #2b98f0;
+        text-decoration: underline;
+      }
+      x-screen a.hover {
+        text-decoration: none;
+      }
     `,
     showHamburgerMenu: '',
     showWindowControls: '',
-    padding: '4px 4px',
+    padding: '8px 8px',
     colors: {
-      black: '#000000',
-      red: '#ff0000',
-      green: '#33ff00',
-      yellow: '#ffff00',
-      blue: '#0066ff',
-      magenta: '#cc00ff',
-      cyan: '#00ffff',
-      white: '#d0d0d0',
-      lightBlack: '#808080',
-      lightRed: '#ff0000',
-      lightGreen: '#33ff00',
-      lightYellow: '#ffff00',
-      lightBlue: '#0066ff',
-      lightMagenta: '#cc00ff',
-      lightCyan: '#00ffff',
+      black: '#263238',
+      red: '#ff5252',
+      green: '#9ccC65',
+      yellow: '#fee94e',
+      blue: '#2b98f0',
+      magenta: '#b38bfc',
+      cyan: '#68b6f3',
+      white: '#eceff1',
+      lightBlack: '#617d8a',
+      lightRed: '#fc625d',
+      lightGreen: '#9ccc65',
+      lightYellow: '#fee94e',
+      lightBlue: '#2b98f0',
+      lightMagenta: '#b38bfc',
+      lightCyan: '#68b6f3',
       lightWhite: '#ffffff'
     },
     shell: '',
@@ -44,7 +67,6 @@ module.exports = {
   plugins: [
     'hyperlinks',
     'hyperterm-dibdabs',
-    'hyperterm-material',
     'hyperterm-paste',
     'hyper-broadcast'
   ],
