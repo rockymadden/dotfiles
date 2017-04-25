@@ -41,6 +41,7 @@ alias ghc='hub clone'
 # alias gla='git la'
 # alias gls='git ls'
 alias gp='git push gh -u $(git rev-parse --abbrev-ref HEAD)'
+alias gpa="gp && await 'git ci-status'"
 alias gpn='f() { gp && { sleep 10 ; circleci notify; } &; }; f'
 alias gpg-decrypt-asymmetric='gpg'
 alias gpg-decrypt-symmetric='gpg -d'
