@@ -15,16 +15,9 @@
       panelShadows: true
   core:
     disabledPackages: [
-      "atomic-chrome"
       "deprecation-cop"
-      "hex"
       "linter-eslint"
-      "merge-conflicts"
       "metrics"
-      "minimap-pigments"
-      "pigments"
-      "regex-railroad-diagram"
-      "vim-mode"
       "whitespace"
     ]
     followSymlinks: true
@@ -57,8 +50,6 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
-      pigments: true
-      pigmentsDecorationsZIndex: 0
   "recent-files":
     updated: false
   "tree-view":

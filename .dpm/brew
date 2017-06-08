@@ -9,7 +9,6 @@ circleci-cli
 coreutils
 curl
 dateutils
-docker-clean
 doctl
 elixir
 erlang
@@ -26,7 +25,6 @@ git-extras
 gnu-sed
 gnu-tar
 gnupg
-gnupg2
 go
 gpg-agent
 htop
@@ -35,21 +33,17 @@ httpstat
 hub
 jq
 ledger
-libressl
 lua
 mitmproxy
 mosh
 mtr
-multirust
 mycli
 nanomsg
 netcat
 nmap
 nodenv
-nomad
 openssl
 optipng
-packer
 parallel
 patchutils
 p7zip
@@ -61,6 +55,7 @@ rbenv
 redis
 resty
 rfc
+rust
 s3cmd
 slack-cli
 socat

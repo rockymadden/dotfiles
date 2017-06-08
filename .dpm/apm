@@ -3,7 +3,6 @@ atom-material-syntax-light
 atom-material-ui
 autocomplete-paths
 editorconfig
-hex
 highlight-line
 highlight-selected
 language-agda
@@ -25,15 +24,10 @@ language-scala
 language-swift
 linter
 linter-eslint
-linter-ui-default
 linter-xo
-merge-conflicts
 minimap
 minimap-find-and-replace
 minimap-git-diff
 minimap-highlight-selected
-minimap-pigments
-pigments
 pretty-json
 regex-railroad-diagram
-vim-mode
