@@ -4,6 +4,8 @@
 	signingkey = git@rockymadden.com
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = false
 [core]
 	filemode = true
 	ignorecase = false
@@ -12,6 +14,7 @@
 	ui = auto
 [push]
 	default = simple
+	gpgsign = false
 [alias]
 	aliases = !git config -l | grep alias | cut -c 7-
 	amend = commit -a --amend
