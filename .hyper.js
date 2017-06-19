@@ -67,7 +67,6 @@ module.exports = {
   plugins: [
     'hyperlinks',
     'hyperterm-dibdabs',
-    'hyperterm-paste',
     'hyper-broadcast'
   ],
   localPlugins: []
