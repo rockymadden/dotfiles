@@ -1,4 +1,3 @@
-# Core
 *.diff
 *.err
 *.orig
@@ -10,12 +9,5 @@
 *~
 *#
 .git
-
-# OS
 .DS_Store
-
-# Node
 node_modules
-
-# Haskell
-.cabal-sandbox

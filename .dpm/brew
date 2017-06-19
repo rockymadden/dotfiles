@@ -2,7 +2,6 @@ aria2
 arp-scan
 asciinema
 autojump
-awscli
 bats
 bcrypt
 circleci-cli
@@ -20,8 +19,9 @@ fswatch
 gcc
 git
 gitfs
-git-lfs
 git-extras
+git-lfs
+git-town
 gnu-sed
 gnu-tar
 gnupg
