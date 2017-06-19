@@ -18,6 +18,7 @@
 [alias]
 	aliases = !git config -l | grep alias | cut -c 7-
 	amend = commit -a --amend
+	append = town append
 	bugfix = ghflow-start
 	cm = !git add -A && git commit -m
 	co = checkout
@@ -30,12 +31,21 @@
 	ghflow-end = "!f() { git checkout ${1-master} && git resync && git ghflow-clean ${1-master}; }; f"
 	ghflow-start = !git ghflow-clean master && git cob
 	graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	hack = town hack
+	kill = town kill
 	la = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat --date=short
 	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	new-pull-request = town new-pull-request
 	normalize = remote rename origin gh
+	prepend = town prepend
+	prune-branches = town prune-branches
 	redo = !git undo && git cm
+	repo = town repo
+	rename-branch = town rename-branch
 	resync = !git fetch --all && git pull --rebase --prune $@ && git submodule update --init --recursive
 	rollback = reset HEAD~1 --hard
+	ship = town ship
 	summary = !git log $(git log -1 --merges --pretty=format:%H)..HEAD --oneline
+	sync = town sync
 	undo = reset HEAD~1 --mixed
 	wipe = !git add -A && git commit -qm 'wiped' && git rollback
