@@ -5,6 +5,7 @@ autojump
 bats
 bcrypt
 circleci-cli
+clisp
 coreutils
 curl
 dateutils
