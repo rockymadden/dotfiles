@@ -25,9 +25,10 @@ language-swift
 linter
 linter-eslint
 linter-xo
-minimap
+minimap-plus
 minimap-find-and-replace
 minimap-git-diff
 minimap-highlight-selected
+minimap-linter
 pretty-json
 regex-railroad-diagram
