@@ -29,5 +29,6 @@ minimap-plus
 minimap-find-and-replace
 minimap-git-diff
 minimap-highlight-selected
+minimap-linter
 pretty-json
 regex-railroad-diagram
