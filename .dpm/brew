@@ -33,6 +33,7 @@ httpie
 httpstat
 hub
 jq
+jsawk
 ledger
 lua
 mitmproxy
