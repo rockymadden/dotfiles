@@ -40,6 +40,7 @@
     minimumLength: 2
   linter: {}
   "linter-ui-default": {}
+  "lisp-paredit": {}
   minimap:
     autoToggle: true
     plugins:
@@ -50,11 +51,10 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
-      linter: true
-      linterDecorationsZIndex: 0
   "recent-files":
     updated: false
   "tree-view":
+    autoReveal: true
     hideIgnoredNames: true
   welcome:
     showOnStartup: false
