@@ -22,13 +22,15 @@ language-purescript
 language-rust
 language-scala
 language-swift
+lisp-paredit
 linter
 linter-eslint
 linter-xo
-minimap-plus
+minimap
 minimap-find-and-replace
 minimap-git-diff
 minimap-highlight-selected
 minimap-linter
+parinfer
 pretty-json
 regex-railroad-diagram
