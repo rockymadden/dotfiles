@@ -1,6 +1,6 @@
 module.exports = {
   config: {
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: '"SourceCodePro+Powerline+Awesome Regular", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
     cursorColor: 'rgba(255, 255, 255, 0.5)',
     cursorShape: 'BEAM',
