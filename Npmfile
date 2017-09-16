@@ -1,0 +1,14 @@
+npm install --global \
+  ava \
+  bunyan \
+  hasha-cli \
+  is-up-cli \
+  fast-cli \
+  fkill-cli \
+  n \
+  ramdascript \
+  ramda-cli \
+  replem \
+  tldr \
+  trash-cli \
+  xo
