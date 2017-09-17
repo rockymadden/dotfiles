@@ -1,0 +1,14 @@
+{
+  "atomKeymap.promptV3Features": true,
+  "editor.fontFamily": "Source Code Pro",
+  "editor.fontSize": 13,
+  "editor.formatOnPaste": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    80, 120
+  ],
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Material Theme",
+  "xo.enable": true
+}

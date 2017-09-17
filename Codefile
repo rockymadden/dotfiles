@@ -1,0 +1,18 @@
+code --install-extension EditorConfig.EditorConfig
+code --install-extension Equinusocio.vsc-material-theme
+code --install-extension PKief.material-icon-theme
+code --install-extension PeterJausovec.vscode-docker
+code --install-extension chrmarti.regex
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension donjayamanne.python
+code --install-extension eg2.tslint
+code --install-extension eriklynd.json-tools
+code --install-extension humao.rest-client
+code --install-extension justusadam.language-haskell
+code --install-extension kalitaalexey.vscode-rust
+code --install-extension lukehoban.Go
+code --install-extension mattn.Lisp
+code --install-extension ms-vscode.atom-keybindings
+code --install-extension code --install-extension rebornix.Ruby
+code --install-extension samverschueren.linter-xo
+code --install-extension sbrink.elm
