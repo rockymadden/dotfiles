@@ -12,6 +12,7 @@ npm install --global \
   ramdascript \
   ramda-cli \
   replem \
+  tmpl-cli \
   tldr \
   trash-cli \
   xo
