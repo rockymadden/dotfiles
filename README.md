@@ -3,8 +3,6 @@
 [![versioning](http://img.shields.io/badge/versioning-continous-blue.svg)](#)
 [![branching](http://img.shields.io/badge/branching-github%20flow-blue.svg)](https://guides.github.com/introduction/flow/)
 [![license](http://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
-[![slack](http://img.shields.io/badge/slack-join-e01563.svg)](https://rockymadden-slack.herokuapp.com)
-[![circleci](https://circleci.com/gh/rockymadden/dotfiles.svg?style=shield)](https://circleci.com/gh/rockymadden/dotfiles)
 
 ## Installation
 ```zsh
@@ -16,7 +14,7 @@ $ brew dotfiles install rockymadden
 ```
 The MIT License (MIT)
 
-Copyright (c) 2017 Rocky Madden (https://rockymadden.com/)
+Copyright (c) 2018 Rocky Madden (https://rockymadden.com/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

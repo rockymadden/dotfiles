@@ -14,6 +14,3 @@ done; unset file
 
 # ssh-agent
 ssh-add -l | grep -q '.ssh/id_rsa' || ssh-add -A 2>/dev/null
-
-# gpg-agent
-(eval $(gpg-agent --daemon)) 2>/dev/null

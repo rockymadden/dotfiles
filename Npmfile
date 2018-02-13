@@ -2,16 +2,14 @@ npm install --global \
   ava \
   bower \
   bunyan \
+  elm \
   hasha-cli \
-  is-up-cli \
-  fast-cli \
-  fkill-cli \
-  n \
   pulp \
   purescript \
   ramdascript \
   ramda-cli \
   replem \
+  tern \
   tmpl-cli \
   tldr \
   trash-cli \
