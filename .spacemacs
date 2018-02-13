@@ -25,7 +25,6 @@
      javascript
      lua
      markdown
-     ocaml
      purescript
      rust
      scala
@@ -60,6 +59,7 @@
                          spacemacs-light)
    dotspacemacs-colorize-cursor-according-to-state t
    dotspacemacs-default-font '("Source Code Pro"
+                               :size 14
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -76,7 +76,7 @@
    dotspacemacs-ex-substitute-global nil
    dotspacemacs-default-layout-name "Default"
    dotspacemacs-display-default-layout nil
-   dotspacemacs-auto-resume-layouts nil
+   dotspacemacs-auto-resume-layouts f
    dotspacemacs-large-file-size 1
    dotspacemacs-auto-save-file-location 'cache
    dotspacemacs-max-rollback-slots 5
@@ -110,6 +110,8 @@
 (defun dotspacemacs/user-init ())
 
 (defun dotspacemacs/user-config ()
+  (desktop-save-mode)
+  (desktop-read)
   (editorconfig-mode 1)
   (fci-mode 1)
   (global-set-key [f8] 'neotree-toggle)
