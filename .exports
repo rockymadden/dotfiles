@@ -1,5 +1,5 @@
 export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
-export EDITOR="vim"
+export EDITOR="emacs"
 export HISTFILESIZE=4096
 export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"
 export HISTSIZE=4096
@@ -10,23 +10,12 @@ export LC_ALL="en_US.UTF-8"
 export GREP_OPTIONS="--color=auto"
 export TERM="xterm-256color"
 
-# Homebrew
 export HOMEBREW_NO_ANALYTICS=1
-
-# Go
 export GOPATH=~/.go
 export PATH=$PATH:$GOPATH/bin
-
-# Node
 export NODE_ENV=development
-
-# Ruby
 export RUBYOPT='-W0'
 
-# GPG
-export GPG_TTY=$(tty)
-
-# ZSH
 export DEFAULT_USER=rockymadden
 export DISABLE_AUTO_TITLE="false"
 export DISABLE_AUTO_UPDATE="true"
