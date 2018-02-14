@@ -1,5 +1,7 @@
 ;; -*- mode: emacs-lisp -*-
 
+;; -*- mode: emacs-lisp -*-
+
 (defun dotspacemacs/layers ()
   (setq-default
    dotspacemacs-distribution 'spacemacs
@@ -25,6 +27,7 @@
      javascript
      lua
      markdown
+     osx
      purescript
      rust
      scala
@@ -111,15 +114,13 @@
 
 (defun dotspacemacs/user-config ()
   (blink-cursor-mode 1)
-  (desktop-save-mode)
-  (desktop-read)
   (editorconfig-mode 1)
   (fci-mode 1)
+  (linum-mode 1)
   (global-set-key [f8] 'neotree-toggle)
   (set-terminal-parameter nil 'background-mode 'dark)
   (set-frame-parameter nil 'background-mode 'dark)
   (setq-default fill-column 100)
-  (setq-default dotspacemacs-line-numbers t)
   (spacemacs/load-theme 'solarized)
   (add-hook 'purescript-mode-hook
             (lambda ()

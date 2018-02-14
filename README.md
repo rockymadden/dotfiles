@@ -1,8 +1,4 @@
 # dotfiles <sub><sup>| Personal dotfiles</sup></sub>
-[![version](http://img.shields.io/badge/version-n/a-blue.svg)](#)
-[![versioning](http://img.shields.io/badge/versioning-continous-blue.svg)](#)
-[![branching](http://img.shields.io/badge/branching-github%20flow-blue.svg)](https://guides.github.com/introduction/flow/)
-[![license](http://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation
 ```zsh
