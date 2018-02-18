@@ -1,11 +1,5 @@
 # dotfiles <sub><sup>| Personal dotfiles</sup></sub>
 
-## Installation
-```zsh
-$ brew tap rockymadden/dotfiles
-$ brew dotfiles install rockymadden
-```
-
 ## License
 ```
 The MIT License (MIT)

@@ -1,14 +1,13 @@
 # dotfiles: exports
-for file in ~/.{exports,_exports}; do
+for file in ~/.shell/{exports,_exports}; do
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done; unset file
 
 plugins=(autojump)
-
 source "${ZSH}/oh-my-zsh.sh"
 
 # dotfiles: aliases, functions, sources
-for file in ~/.{exports,_exports,aliases,_aliases,functions,_functions,sources,_sources}; do
+for file in ~/.shell/{exports,_exports,aliases,_aliases,functions,_functions,sources,_sources}; do
   [ -r "${file}" ] && [ -f "${file}" ] && source "${file}"
 done; unset file
 
