@@ -1,7 +1,5 @@
 ;; -*- mode: emacs-lisp -*-
 
-;; -*- mode: emacs-lisp -*-
-
 (defun dotspacemacs/layers ()
   (setq-default
    dotspacemacs-distribution 'spacemacs
