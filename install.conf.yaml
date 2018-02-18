@@ -1,25 +1,17 @@
 - defaults:
     link:
+      create: true
       relink: true
 
-- clean: ['~']
+- clean: ['~', '~/.config']
 
 - link:
-    ~/.dotfiles: ''
-    ~/.bin/Brewfile:
-    ~/.bin/install-brew:
-    ~/.bin/install-code:
-    ~/.bin/install-npm:
-    ~/.bin/install-pip:
-    ~/.code/settings.json:
-    ~/.font/SourceCodePro+Powerline+Awesome+Regular.ttf:
-    ~/.gnupg/gpg-agent.conf:
-    ~/.gnupg/gpg.conf:
-    ~/.shell/aliases:
-    ~/.shell/exports:
-    ~/.shell/functions:
-    ~/.shell/sources:
-    ~/.ssh/config:
+    ~/.bin:
+    ~/.code:
+    ~/.font:
+    ~/.gnupg:
+    ~/.shell:
+    ~/.ssh/config: ssh/config
     ~/.gitconfig:
     ~/.gitignore:
     ~/.spacemacs:
