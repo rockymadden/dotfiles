@@ -1,4 +1,4 @@
-export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 export EDITOR="emacs"
 export HISTFILESIZE=4096
 export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"

@@ -12,6 +12,7 @@
     ~/.gnupg:
     ~/.shell:
     ~/.ssh/config: ssh/config
+    ~/Brewfile: Brewfile
     ~/.gitconfig:
     ~/.gitignore:
     ~/.spacemacs:
