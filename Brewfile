@@ -95,3 +95,5 @@ cask "kitematic"
 cask "lumen"
 cask "slack"
 cask "visual-studio-code"
+mas "Moom", id: 419330170
+mas "Xcode", id: 497799835
