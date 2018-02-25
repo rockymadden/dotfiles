@@ -11,5 +11,8 @@
   "gitlens.codeLens.enabled": false,
   "xo.enable": true,
   "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Material Theme"
+  "workbench.colorTheme": "Material Theme",
+  "materialTheme.cache.workbench.settings": {
+    "themeColours": "Default"
+  }
 }
