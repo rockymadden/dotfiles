@@ -96,6 +96,7 @@ cask "iterm2"
 cask "kitematic"
 cask "lumen"
 cask "slack"
+cask "virtualbox"
 cask "visual-studio-code"
 mas "Moom", id: 419330170
 mas "Xcode", id: 497799835
