@@ -1,20 +1,3 @@
-[user]
-	name = Rocky Madden
-	email = git@rockymadden.com
-	signingkey = git@rockymadden.com
-[credential]
-	helper = osxkeychain
-[commit]
-	gpgsign = false
-[core]
-	filemode = true
-	ignorecase = false
-	excludesfile = ~/.gitignore
-[color]
-	ui = auto
-[push]
-	default = simple
-	gpgsign = false
 [alias]
 	aliases = !git config -l | grep alias | cut -c 7-
 	amend = commit -a --amend
@@ -42,3 +25,22 @@
 	sync = town sync
 	undo = reset HEAD~1 --mixed
 	wipe = !git add -A && git commit -qm 'wiped' && git rollback
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
+[core]
+	excludesfile = ~/.gitignore
+	filemode = true
+	ignorecase = false
+[credential]
+	helper = osxkeychain
+[gpg]
+	program = /usr/local/bin/gpg
+[push]
+	default = simple
+	gpgsign = false
+[user]
+	email = git@rockymadden.com
+	name = Rocky Madden
+	signingkey = 3F2509BA
