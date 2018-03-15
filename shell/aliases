@@ -69,6 +69,7 @@ alias ps='ps aux'
 alias psg='f() { command ps aux | grep -v grep | grep -i -e VSZ -e "$*"; }; f'
 alias reload="exec $SHELL -l"
 alias repl='replem'
+alias repl!='replem ramda:R ramda-adjunct:RA sanctuary:S crocks:C fluture:F partial.lenses:L'
 alias search='ag'
 alias scp-as='f() { scp -i ~/.ssh/"$1" "${@:2}"; }; f'
 alias scp-as-and-forget='f() { scp -o UserKnownHostsFile=/dev/null -i ~/.ssh/"$1" "${@:2}"; }; f'
