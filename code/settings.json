@@ -7,7 +7,7 @@
   "editor.rulers": [80, 100, 120],
   "editor.tabSize": 2,
   "gitlens.currentLine.enabled": false,
-  "gitlens.keymap": "alternate",
+  "gitlens.keymap": "chorded",
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
   "materialTheme.cache.workbench.settings": {
@@ -16,5 +16,16 @@
   "xo.enable": true,
   "workbench.activityBar.visible": true,
   "workbench.colorTheme": "Material Theme",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true
+  },
+  "gitlens.historyExplorer.enabled": true
 }

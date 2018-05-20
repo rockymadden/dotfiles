@@ -1,5 +1,5 @@
 export PATH=~/.bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
-export EDITOR="emacs"
+export EDITOR="vim"
 export HISTFILESIZE=4096
 export HISTIGNORE="cd:cd -:date:exit:la:ls:pwd"
 export HISTSIZE=4096

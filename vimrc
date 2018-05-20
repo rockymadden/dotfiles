@@ -4,14 +4,14 @@
 filetype plugin on
 filetype indent on
 set autoread
-set history=2048
+set history=4096
 set tabpagemax=32
 
 " ---------------------------------------------------------------------------
 " Theme and font
 " ---------------------------------------------------------------------------
 " colorscheme Tomorrow-Night
-set gfn=Source\ Code\ Pro:h12
+set gfn=Source\ Code\ Pro:h13
 
 " ---------------------------------------------------------------------------
 " Backups
