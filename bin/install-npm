@@ -1,16 +1,14 @@
-npm install --global \
-  ava \
-  bower \
-  bunyan \
-  elm \
-  hasha-cli \
-  pulp \
-  purescript \
-  ramdascript \
-  ramda-cli \
-  replem \
-  tern \
-  tmpl-cli \
-  tldr \
-  trash-cli \
-  xo
+echo 'ava
+bower
+bunyan
+elm
+hasha-cli
+pulp
+purescript
+ramda-cli
+replem
+tern
+tmpl-cli
+tldr
+trash-cli
+xo' | parallel npm install --global {}
