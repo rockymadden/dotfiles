@@ -1,37 +1,38 @@
-code --install-extension DavidAnson.vscode-markdownlint
-code --install-extension EditorConfig.EditorConfig
-code --install-extension Equinusocio.vsc-material-theme
-code --install-extension James-Yu.latex-workshop
-code --install-extension Kasik96.swift
-code --install-extension PKief.material-icon-theme
-code --install-extension PeterJausovec.vscode-docker
-code --install-extension avli.clojure
-code --install-extension chrmarti.regex
-code --install-extension clptn.code-paredit
-code --install-extension daltonjorge.scala
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension donjayamanne.githistory
-code --install-extension eamodio.gitlens
-code --install-extension eg2.tslint
-code --install-extension eg2.vscode-npm-script
-code --install-extension eriklynd.json-tools
-code --install-extension humao.rest-client
-code --install-extension ilich8086.coldfusion
-code --install-extension justusadam.language-haskell
-code --install-extension kalitaalexey.vscode-rust
-code --install-extension keyring.Lua
-code --install-extension lfs.vscode-emacs-friendly
-code --install-extension lukehoban.Go
-code --install-extension mariosangiorgio.ledger
-code --install-extension mattn.Lisp
-code --install-extension mjmcloug.vscode-elixir
-code --install-extension mrmlnc.vscode-apache
-code --install-extension ms-python.python
-code --install-extension ms-vscode.atom-keybindings
-code --install-extension ms-vscode.azure-account
-code --install-extension nwolverson.ide-purescript
-code --install-extension nwolverson.language-purescript
-code --install-extension samverschueren.linter-xo
-code --install-extension sbrink.elm
-code --install-extension shaunlebron.vscode-parinfer
-code --install-extension yuce.erlang-otp
+ echo 'CoenraadS.bracket-pair-colorizer                                                                                                                                             ✓  2560  13:04:46
+DavidAnson.vscode-markdownlint
+EditorConfig.EditorConfig
+Equinusocio.vsc-material-theme
+James-Yu.latex-workshop
+Kasik96.swift
+PKief.material-icon-theme
+PeterJausovec.vscode-docker
+avli.clojure
+chrmarti.regex
+clptn.code-paredit
+daltonjorge.scala
+dbaeumer.vscode-eslint
+donjayamanne.githistory
+eamodio.gitlens
+eg2.tslint
+eg2.vscode-npm-script
+eriklynd.json-tools
+humao.rest-client
+ilich8086.coldfusion
+justusadam.language-haskell
+kalitaalexey.vscode-rust
+keyring.Lua
+lfs.vscode-emacs-friendly
+mariosangiorgio.ledger
+mattn.Lisp
+mauve.terraform
+mjmcloug.vscode-elixir
+mrmlnc.vscode-apache
+ms-python.python
+ms-vscode.azure-account
+ms-vscode.Go
+nwolverson.ide-purescript
+nwolverson.language-purescript
+samverschueren.linter-xo
+sbrink.elm
+shaunlebron.vscode-parinfer
+yuce.erlang-otp' | parallel code --install-extension {}
