@@ -1,5 +1,3 @@
-bower_components
-node_modules
 .DS_Store
 .git
 *.diff
@@ -12,3 +10,5 @@ node_modules
 *.vi
 *~
 *#
+bower_components
+node_modules
