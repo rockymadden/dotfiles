@@ -10,13 +10,10 @@
   "gitlens.keymap": "chorded",
   "gitlens.hovers.currentLine.over": "line",
   "gitlens.codeLens.enabled": false,
-  "materialTheme.cache.workbench.settings": {
-    "themeColours": "Default"
-  },
   "xo.enable": true,
   "workbench.activityBar.visible": true,
   "workbench.colorTheme": "Material Theme",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "eq-material-theme-icons",
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -26,6 +23,5 @@
     "suppressNoRepositoryWarning": false,
     "suppressResultsExplorerNotice": false,
     "suppressShowKeyBindingsNotice": true
-  },
-  "gitlens.historyExplorer.enabled": true
+  }
 }
