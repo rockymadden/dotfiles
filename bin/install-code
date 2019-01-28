@@ -3,7 +3,6 @@ DavidAnson.vscode-markdownlint
 EditorConfig.EditorConfig
 Equinusocio.vsc-material-theme
 James-Yu.latex-workshop
-Kasik96.swift
 PKief.material-icon-theme
 PeterJausovec.vscode-docker
 avli.clojure
@@ -13,11 +12,7 @@ daltonjorge.scala
 dbaeumer.vscode-eslint
 donjayamanne.githistory
 eamodio.gitlens
-eg2.tslint
-eg2.vscode-npm-script
 eriklynd.json-tools
-humao.rest-client
-ilich8086.coldfusion
 justusadam.language-haskell
 kalitaalexey.vscode-rust
 keyring.Lua

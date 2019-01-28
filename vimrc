@@ -11,7 +11,7 @@ set tabpagemax=32
 " Theme and font
 " ---------------------------------------------------------------------------
 " colorscheme Tomorrow-Night
-set gfn=Source\ Code\ Pro:h13
+set gfn=Source\ Code\ Pro:h14
 
 " ---------------------------------------------------------------------------
 " Backups
