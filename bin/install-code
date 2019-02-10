@@ -1,32 +1,23 @@
-echo 'CoenraadS.bracket-pair-colorizer
-DavidAnson.vscode-markdownlint
-EditorConfig.EditorConfig
-Equinusocio.vsc-material-theme
-James-Yu.latex-workshop
-PKief.material-icon-theme
-PeterJausovec.vscode-docker
-avli.clojure
+echo 'alanz.vscode-hie-server
 chrmarti.regex
-clptn.code-paredit
 daltonjorge.scala
+DavidAnson.vscode-markdownlint
 dbaeumer.vscode-eslint
-donjayamanne.githistory
 eamodio.gitlens
+EditorConfig.EditorConfig
+eg2.tslint
+Equinusocio.vsc-material-theme
 eriklynd.json-tools
+James-Yu.latex-workshop
+jcanero.hoogle-vscode
 justusadam.language-haskell
 kalitaalexey.vscode-rust
-keyring.Lua
 mariosangiorgio.ledger
-mattn.Lisp
-mauve.terraform
-mjmcloug.vscode-elixir
-mrmlnc.vscode-apache
 ms-python.python
-ms-vscode.azure-account
 ms-vscode.Go
 nwolverson.ide-purescript
 nwolverson.language-purescript
+PKief.material-icon-theme
 samverschueren.linter-xo
 sbrink.elm
-shaunlebron.vscode-parinfer
-yuce.erlang-otp' | parallel code --install-extension {}
+shengchen.vscode-leetcode' | parallel code --install-extension {}
